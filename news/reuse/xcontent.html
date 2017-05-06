@@ -1,0 +1,91 @@
+<div>
+	<header>
+		<p>{{title}}</p>
+	</header>
+	<!-- searchr -->
+	<div class="weui-search-bar" ng-class="{'weui-search-bar_focusing':show}" id="search_bar">
+		<form class="weui-search-bar__form">
+			<div class="weui-search-bar__box">
+				<i class="weui-icon-search"></i>
+				<input type="search" ng-model="val" ng-focus="search()" class="weui-search-bar__input" id="search_input" placeholder="搜索" />
+				<a ng-click="clean()" class="weui-icon-clear" id="search_clear"></a>
+			</div>
+			<label for="search_input" class="weui-search-bar__label" id="search_text">
+	            <i class="weui-icon-search"></i>
+	            <span>搜索</span>
+	        </label>
+		</form>
+		<a ng-click="show=false" class="weui-search-bar__cancel-btn" id="search_cancel">取消</a>
+	</div>
+	
+	<!-- swiper -->
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+			<div class="swiper-slide"><img class="swiper-img" src="img/cat.jpg" /></div>
+		</div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
+	</div>
+	
+	<!--list-->
+	<div class="weui-panel weui-panel_access">
+		<div class="weui-panel__hd">新闻列表</div>
+		<div class="weui-panel__bd">
+			<a ng-repeat="key in news|filter:val" ng-href="#/detail?title={{key.title}}" class="weui-media-box weui-media-box_appmsg">
+				<div ng-show="key.imageurls[0].url" class="weui-media-box__hd">
+					<img class="weui-media-box__thumb" ng-src="{{key.imageurls[0].url}}" alt="">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">{{key.title}}</h4>
+					<p class="weui-media-box__desc">{{key.desc}}</p>
+				</div>
+			</a>
+		</div>
+		<div class="weui-panel__ft">
+			<a ng-click="loadMore()" class="weui-cell weui-cell_access weui-cell_link">
+				<div class="weui-cell__bd">查看更多</div>
+				<span class="weui-cell__ft"></span>
+			</a>
+		</div>
+	</div>
+	
+	<!--loading-->
+	<div id="loadingToast" ng-show="load">
+		<div class="weui-mask_transparent"></div>
+		<div class="weui-mask"></div>
+		<div class="weui-toast">
+			<i class="weui-loading weui-icon_toast"></i>
+			<p class="weui-toast__content">数据加载中</p>
+		</div>
+	</div>
+	
+	<!--foot-->
+	<div class="weui-tabbar">
+		<a ng-href="#/tiyu" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==0}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">体育</p>
+		</a>
+		<a ng-href="#/yule" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==1}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">娱乐</p>
+		</a>
+		<a ng-href="#/junshi" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==2}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">军事</p>
+		</a>
+		<a ng-href="#/shehui" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==3}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">社会</p>
+		</a>
+	</div>
+</div>
+	

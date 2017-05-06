@@ -1,0 +1,23 @@
+<div class="page article js_show">
+	<div class="page__bd">
+		<article class="weui-article">
+			<h1>{{news.title}}</h1>
+			<section>
+				<section>
+					<p>{{news.desc}}</p>
+					<p>
+						<img ng-click="look()" ng-src="{{news.imageurls[0].url?news.imageurls[0].url:''}}" alt="">
+					</p>
+				</section>
+			</section>
+		</article>
+	</div>
+	<div class="weui-gallery" style="display: {{show?'block':'none'}};">
+		<span class="weui-gallery__img" style="background-image: url({{news.imageurls[0].url}});"></span>
+		<div class="weui-gallery__opr">
+			<a ng-click="show=false" href="javascript:" class="weui-gallery__del">
+				<p style="color: white;">隐藏</p>
+			</a>
+		</div>
+	</div>
+</div>
