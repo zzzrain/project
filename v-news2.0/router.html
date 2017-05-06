@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">
+			<router-view></router-view>
+		</div>
+	</body>
+	<script src="js/vue-2.3.js"></script>
+	<script src="js/vue-router.js"></script>
+	<script>
+		var first = Vue.extend({
+			template: "<p>第一个组件</p>"
+		})
+		var second = Vue.extend({
+			template: "<p>第二个组件</p>"
+		})
+
+		var router = new VueRouter({
+			routes: [{
+				path: "/index",
+				component: first
+			}, {
+				path: "/home",
+				component: second
+			}]
+		})
+		new Vue({
+			el: "#demo",
+			router:router
+		})
+	</script>
+
+</html>

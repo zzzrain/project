@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app='demo'>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="css/ionic.css" />
+	<script src="js/ionic.bundle.js"></script>
+	<script>
+		angular.module('demo', ['ionic'])
+			.controller('indexCtrl', function($scope, $http) {
+				$scope.loadMore = function(){
+					
+				}
+			})
+	</script>
+
+	<body ng-controller='indexCtrl'>
+		<ion-header-bar class="bar-calm">
+			<div class="buttons">
+				<button class="button" ng-click="doSomething()">左侧按钮</button>
+			</div>
+			<h1 class="title">美女连连看</h1>
+			<div class="buttons">
+				<button class="button">右侧按钮</button>
+			</div>
+		</ion-header-bar>
+		
+		<ion-content scroll='true' padding='false'>
+			
+			<div class="list card">
+
+				<div class="item item-avatar">
+					<img src="http://www.runoob.com/try/demo_source/mcfly.jpg">
+					<h2>Marty McFly</h2>
+					<p>November 05, 1955</p>
+				</div>
+
+				<div class="item item-body">
+					<img class="full-image" style="height:20%; width:100%" src="http://www.runoob.com/try/demo_source/delorean.jpg">
+					<p>
+						Andy说方洋老是嘲笑网吧帅哥！！！
+					</p>
+					<p>
+						<a href="#" class="subdued">1 喜欢</a>
+						<a href="#" class="subdued">5 评论</a>
+					</p>
+				</div>
+
+				<div class="item tabs tabs-secondary tabs-icon-left">
+					<a class="tab-item" href="#">
+						<i class="icon ion-thumbsup"></i> 喜欢
+					</a>
+					<a class="tab-item" href="#">
+						<i class="icon ion-chatbox"></i> 评论
+					</a>
+					<a class="tab-item" href="#">
+						<i class="icon ion-share"></i> 分享
+					</a>
+				</div>
+
+			</div>
+			<div class="list">
+				<a class="item item-thumbnail-left" href="#">
+					<img src="http://www.runoob.com/try/demo_source/blue-album.jpg">
+					<h2>Weezer</h2>
+					<p>Blue Album</p>
+				</a>
+
+				<a class="item item-thumbnail-left" href="#">
+					<img src="http://www.runoob.com/try/demo_source/siamese-dream.jpg">
+					<h2>Smashing Pumpkins</h2>
+					<p>Siamese Dream</p>
+				</a>
+
+				<a class="item item-thumbnail-left" href="#">
+					<img src="http://www.runoob.com/try/demo_source/nevermind.jpg">
+					<h2>Nirvana</h2>
+					<p>Nevermind</p>
+				</a>
+
+				<a class="item item-thumbnail-left" href="#">
+					<img src="http://www.runoob.com/try/demo_source/license-to-ill.jpg">
+					<h2>Beastie Boys</h2>
+					<p>License To Ill</p>
+				</a>
+			</div>
+			
+			<ion-infinite-scroll on-infinite="loadMore()"></ion-infinite-scroll>
+			
+		</ion-content>
+
+		<ion-tabs class="tabs-positive tabs-icon-only">
+
+			<ion-tab title="首页" badge="9" icon-on="ion-heart" icon-off="ion-heart-broken">
+			</ion-tab>
+
+			<ion-tab title="关于" icon-on="ion-help-buoy" icon-off="ion-aperture">
+			</ion-tab>
+
+			<ion-tab title="设置" icon-on="ion-flash" icon-off="ion-cube">
+			</ion-tab>
+
+		</ion-tabs>
+	</body>
+	
+</html>

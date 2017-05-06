@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app='demo'>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>美女图片</title>
+	</head>
+	<body>
+		<div ng-controller='indexCtrl'>
+			<div ng-repeat='key in news'>
+				<h3>{{key.title}}</h3>
+				<p><img ng-src="{{key.thumb}}" alt="" /></p>
+			</div>
+		</div>
+	</body>
+	<script src="js/angular.js"></script>
+	<script>
+		angular.module('demo',[])
+		.controller('indexCtrl',function($scope,$http){
+			$scope.name = 'ok'
+			$http({
+				url:'php/huaban.php',
+				method:'GET',
+				params:{},
+			}).then(function(data){
+				console.log(data.data.showapi_res_body)
+				$scope.news = data.data.showapi_res_body
+			})
+		})
+	</script>
+</html>

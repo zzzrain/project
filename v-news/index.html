@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/swiper.css" />
+	<link rel="stylesheet" href="css/weui.css" />
+	<body id="demo">
+		<xhead></xhead>
+		<xsearch></xsearch>
+		<xswiper></xswiper>
+		<xlist></xlist>
+	</body>
+	<script src="js/vue.js"></script>
+	<script src="js/vuex.js"></script>
+	<script src="js/vue-router.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/swiper.js"></script>
+	<script src="components/xhead.js"></script>
+	<script src="components/xsearch.js"></script>
+	<script src="components/xswiper.js"></script>
+	<script src="components/xlist.js"></script>
+	<script>
+		// Vuex——状态管理模式，实现组件间的数据交互
+		var store = new Vuex.Store({
+			// 单一状态树，即唯一数据源
+			state:{
+				val:''
+			},
+			// 处理数据
+			mutations:{
+				change(state,data){
+					state.val = data
+				}
+			},
+			// 获取数据
+			getters:{
+				get(state){
+					return state.val
+				}
+			},
+		})
+		
+		
+		var index = Vue.extend({
+			template:`
+				<xhead></xhead>
+				<xsearch></xsearch>
+				<xswiper></xswiper>
+				<xlist></xlist>
+			`
+		})
+		
+		var detail = Vue.extend({
+			template:``
+		})
+		
+		var router = new VueRouter({
+			routers:[{
+				path:'/index',
+				component:index,
+			},{
+				path:'/detail',
+				component:detail,
+			},{
+				path:'/',
+				redirect:'/index',
+			}]
+		})
+		
+		new Vue({
+			el:'#demo',
+			store:store,
+			//router:router,
+		})
+	</script>
+</html>
