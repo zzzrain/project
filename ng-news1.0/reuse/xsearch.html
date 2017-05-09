@@ -1,0 +1,14 @@
+<div class="weui-search-bar" ng-class="{'weui-search-bar_focusing':show}" id="search_bar">
+	<form class="weui-search-bar__form">
+		<div class="weui-search-bar__box">
+			<i class="weui-icon-search"></i>
+			<input type="search" ng-model="val" ng-focus="search()" class="weui-search-bar__input" id="search_input" placeholder="搜索" />
+			<a ng-click="clean()" class="weui-icon-clear" id="search_clear"></a>
+		</div>
+		<label for="search_input" class="weui-search-bar__label" id="search_text">
+            <i class="weui-icon-search"></i>
+            <span>搜索</span>
+        </label>
+	</form>
+	<a ng-click="show=false" class="weui-search-bar__cancel-btn" id="search_cancel">取消</a>
+</div>

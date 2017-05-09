@@ -41,7 +41,7 @@ Vue.component('xlist',{
 	},
 	computed:{
 		title(){
-			return this.$store.getters.get
+			return this.$store.getters.getData
 		}
 	},
 })

@@ -8,8 +8,7 @@
 	<body>
 		<div ng-controller='indexCtrl'>
 			<div ng-repeat='key in news'>
-				<h3>{{key.title}}</h3>
-				<p><img ng-src="{{key.thumb}}" alt="" /></p>
+				
 			</div>
 		</div>
 	</body>
@@ -19,12 +18,12 @@
 		.controller('indexCtrl',function($scope,$http){
 			$scope.name = 'ok'
 			$http({
-				url:'php/huaban.php',
+				url:'php/weixin.php',
 				method:'GET',
 				params:{},
 			}).then(function(data){
-				console.log(data.data.showapi_res_body)
-				$scope.news = data.data.showapi_res_body
+				console.log(data.data.showapi_res_body.newslist)
+				$scope.news = data.data.showapi_res_body.newslist
 			})
 		})
 	</script>

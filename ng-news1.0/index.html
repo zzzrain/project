@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app='demo'>
+	<head>
+		<meta charset="UTF-8">
+		<!--手机自适应-->
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>套套资讯</title>
+	</head>
+	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="css/weui.css" />
+	<link rel="stylesheet" href="css/swiper.css" />
+
+	<body>
+		<ui-view></ui-view>
+	</body>
+	
+	<!-- 引入angular和路由版本 -->
+	<script src="dist/angular-1.5.9.js"></script>
+	<script src="dist/angular-ui-router.js"></script>
+	
+	<!--轮播图插件-->
+	<script src="dist/swiper.js"></script>
+
+	<!--引入所需要的模块，从路由和控制器开始写-->
+	<script src="js/base.js"></script>
+	<script src="js/router.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/directive.js"></script>
+	<script src="js/server.js"></script>
+	<script src="js/filter.js"></script>
+</html>

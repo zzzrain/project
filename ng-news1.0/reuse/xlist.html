@@ -1,0 +1,29 @@
+<div class="weui-panel weui-panel_access">
+	<div class="weui-panel__hd">新闻列表</div>
+	<div class="weui-panel__bd">
+		<a ng-repeat="key in news|filter:val" ng-href="#/detail?title={{key.title}}" class="weui-media-box weui-media-box_appmsg">
+			<div ng-show="key.imageurls[0].url" class="weui-media-box__hd">
+				<img class="weui-media-box__thumb" ng-src="{{key.imageurls[0].url}}" alt="">
+			</div>
+			<div class="weui-media-box__bd">
+				<h4 class="weui-media-box__title">{{key.title}}</h4>
+				<p class="weui-media-box__desc">{{key.desc}}</p>
+			</div>
+		</a>
+	</div>
+	<div class="weui-panel__ft">
+		<a ng-click="loadmore()" class="weui-cell weui-cell_access weui-cell_link">
+			<div class="weui-cell__bd">查看更多</div>
+			<span class="weui-cell__ft"></span>
+		</a>
+	</div>
+</div>
+
+<!--<input type="text" ng-model='val'/>
+<ul style="color:#f0f">
+	<li ng-repeat='yin in arr|filter:val|orderBy:"age":false'>
+		我是{{yin.name}},
+		今年{{yin.age}},
+		只爱{{yin.chi}},
+	</li>
+</ul>-->

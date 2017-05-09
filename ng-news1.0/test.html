@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app='demo'>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body ng-controller='index'>
+		<p>{{name}}</p>
+		<input type="text" ng-model='val' />
+		<ul style="color:#f0f">
+			<li ng-repeat='yin in arr|filter:val'>
+				我是{{yin.name}}, 今年{{yin.age}}, 只爱{{yin.chi}},
+			</li>
+		</ul>
+	</body>
+	<script src="dist/angular-1.5.9.js"></script>
+	<script>
+		angular.module('demo',[])
+		.controller('index',function($scope){
+			$scope.name = 'ok';
+			$scope.arr = [
+				{name:'银桑',age:28,chi:'红豆饭'},
+				{name:'十四',age:28,chi:'蛋黄酱'},
+				{name:'神乐',age:16,chi:'醋海带'},
+				{name:'猩猩',age:37,chi:'蛋黄酱'},
+				{name:'月月',age:26,chi:'大烟枪'},
+				{name:'袁飞',age:26,chi:'红豆饭'},
+			];
+		})
+	</script>
+
+</html>
