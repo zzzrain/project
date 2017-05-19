@@ -16,7 +16,7 @@ Vue.component('xswiper',{
 			<div class="swiper-pagination"></div>
 		</div>
 	`,
-	ready(){
+	mounted(){
 		console.log('ok')
 		var swiper = new Swiper('.swiper-container', {
 			pagination: '.swiper-pagination',
