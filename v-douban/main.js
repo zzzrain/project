@@ -1,6 +1,3 @@
-import $ from "jquery"
-window.$ = $
-
 // 加载vue
 import Vue from "vue"
 import VueRouter from "vue-router"
@@ -11,8 +8,12 @@ import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 Vue.use(MuseUI)
 
+// 加载jq
+import $ from "jquery"
+window.$ = $
+
 // 第一层
-import hot from "./components/hot.vue"
+import hots from "./components/hots.vue"
 import find from "./components/find.vue"
 import user from "./components/user.vue"
 
@@ -22,13 +23,14 @@ import intro from "./components/intro.vue"
 import played from "./components/played.vue"
 import prevue from "./components/prevue.vue"
 
+// 第三层
 import comments from "./components/comments.vue"
 import reviews from "./components/reviews.vue"
 
 var router = new VueRouter({
 	routes:[{
-		path:"/hot",
-		component:hot,
+		path:"/hots",
+		component:hots,
 		children:[{
 			// 热影片
 			path:"played",
@@ -39,7 +41,7 @@ var router = new VueRouter({
 			component:prevue
 		},{
 			path:"/",
-			component:played
+			redirect:"/hots/played"
 		}]
 	},{
 		// 详细介绍
@@ -53,6 +55,9 @@ var router = new VueRouter({
 			// 影评
 			path:"reviews",
 			component:reviews
+		},{
+			path:"/",
+			redirect:"/intro/:id/comments"
 		}]
 	},{
 		path:"/find",
@@ -62,7 +67,7 @@ var router = new VueRouter({
 		component:user
 	},{
 		path:"/",
-		redirect:"/hot"
+		redirect:"/hots"
 	}]
 })
 

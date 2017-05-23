@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 18);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -265,7 +265,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(29)
+var listToStyles = __webpack_require__(54)
 
 /*
 type StyleObject = {
@@ -10155,7 +10155,7 @@ return Vue$3;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 4 */
@@ -12627,7 +12627,7 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ __webpack_exports__["a"] = (VueRouter);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(12)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(17)))
 
 /***/ }),
 /* 5 */
@@ -22910,7 +22910,7 @@ for(a=97;a<123;a++)n[String.fromCharCode(a)]=a-32;for(var a=48;a<58;a++)n[a-48]=
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(17);
+var content = __webpack_require__(27);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -22918,7 +22918,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(21)(content, options);
+var update = __webpack_require__(36)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -22941,13 +22941,57 @@ if(false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(28)
+  __webpack_require__(47)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(14),
+  __webpack_require__(19),
   /* template */
-  __webpack_require__(25),
+  __webpack_require__(39),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-5e18e788",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "D:\\project\\v-douban\\components\\comments.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] comments.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5e18e788", Component.options)
+  } else {
+    hotAPI.reload("data-v-5e18e788", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(53)
+}
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(20),
+  /* template */
+  __webpack_require__(45),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -22979,19 +23023,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(27)
+  __webpack_require__(52)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(15),
+  __webpack_require__(21),
   /* template */
-  __webpack_require__(24),
+  __webpack_require__(44),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -22999,9 +23043,9 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "D:\\project\\v-douban\\components\\hot.vue"
+Component.options.__file = "D:\\project\\v-douban\\components\\hots.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] hot.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] hots.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -23010,9 +23054,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-cc058c2e", Component.options)
+    hotAPI.createRecord("data-v-ad54b74c", Component.options)
   } else {
-    hotAPI.reload("data-v-cc058c2e", Component.options)
+    hotAPI.reload("data-v-ad54b74c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -23023,19 +23067,195 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(26)
+  __webpack_require__(50)
 }
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(16),
+  __webpack_require__(22),
   /* template */
+  __webpack_require__(42),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-a0fed8f0",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "D:\\project\\v-douban\\components\\intro.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] intro.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-a0fed8f0", Component.options)
+  } else {
+    hotAPI.reload("data-v-a0fed8f0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(49)
+}
+var Component = __webpack_require__(1)(
+  /* script */
   __webpack_require__(23),
+  /* template */
+  __webpack_require__(41),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-74682be7",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "D:\\project\\v-douban\\components\\played.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] played.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-74682be7", Component.options)
+  } else {
+    hotAPI.reload("data-v-74682be7", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(46)
+}
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(24),
+  /* template */
+  __webpack_require__(38),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "D:\\project\\v-douban\\components\\prevue.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] prevue.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0a306917", Component.options)
+  } else {
+    hotAPI.reload("data-v-0a306917", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(48)
+}
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(25),
+  /* template */
+  __webpack_require__(40),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "D:\\project\\v-douban\\components\\reviews.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] reviews.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6406a0b7", Component.options)
+  } else {
+    hotAPI.reload("data-v-6406a0b7", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(51)
+}
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(26),
+  /* template */
+  __webpack_require__(43),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -23067,7 +23287,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 11 */
+/* 16 */
 /***/ (function(module, exports) {
 
 var g;
@@ -23094,7 +23314,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 12 */
+/* 17 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -23284,48 +23504,97 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 13 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_muse_ui__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_muse_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_muse_ui__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_muse_ui_dist_muse_ui_css__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_muse_ui_dist_muse_ui_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_muse_ui_dist_muse_ui_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_hot_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_hot_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_hot_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_find_vue__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_muse_ui__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_muse_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_muse_ui__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_muse_ui_dist_muse_ui_css__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_muse_ui_dist_muse_ui_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_muse_ui_dist_muse_ui_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_hots_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_hots_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_hots_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_find_vue__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_find_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_find_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_user_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_user_vue__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_user_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_user_vue__);
-
-window.$ = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a;
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_intro_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_intro_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_intro_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_played_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_played_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_played_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_prevue_vue__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_prevue_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_prevue_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_comments_vue__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_comments_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_comments_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_reviews_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_reviews_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_reviews_vue__);
 // 加载vue
 
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 // 加载UI组件
 
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_muse_ui___default.a);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_muse_ui___default.a);
+
+// 加载jq
+
+window.$ = __WEBPACK_IMPORTED_MODULE_4_jquery___default.a;
 
 // 第一层
 
 
 
 
-var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
-	routers: [{
-		path: "/hot",
-		component: __WEBPACK_IMPORTED_MODULE_5__components_hot_vue___default.a
+
+
+// 第二层
+
+
+
+// 第三层
+
+
+
+var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+	routes: [{
+		path: "/hots",
+		component: __WEBPACK_IMPORTED_MODULE_5__components_hots_vue___default.a,
+		children: [{
+			// 热影片
+			path: "played",
+			component: __WEBPACK_IMPORTED_MODULE_9__components_played_vue___default.a
+		}, {
+			// 预影片
+			path: "prevue",
+			component: __WEBPACK_IMPORTED_MODULE_10__components_prevue_vue___default.a
+		}, {
+			path: "/",
+			redirect: "/hots/played"
+		}]
+	}, {
+		// 详细介绍
+		path: "/intro/:id",
+		component: __WEBPACK_IMPORTED_MODULE_8__components_intro_vue___default.a,
+		children: [{
+			// 短评
+			path: "comments",
+			component: __WEBPACK_IMPORTED_MODULE_11__components_comments_vue___default.a
+		}, {
+			// 影评
+			path: "reviews",
+			component: __WEBPACK_IMPORTED_MODULE_12__components_reviews_vue___default.a
+		}, {
+			path: "/",
+			redirect: "/intro/:id/comments"
+		}]
 	}, {
 		path: "/find",
 		component: __WEBPACK_IMPORTED_MODULE_6__components_find_vue___default.a
@@ -23334,21 +23603,26 @@ var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
 		component: __WEBPACK_IMPORTED_MODULE_7__components_user_vue___default.a
 	}, {
 		path: "/",
-		redirect: "/hot"
+		redirect: "/hots"
 	}]
 });
 
-new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
+new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 	el: "#demo",
 	data: {
 		test: "ok"
 	},
-	template: "<h1>ok</h1>",
 	router
 });
 
 /***/ }),
-/* 14 */
+/* 19 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: D:/project/v-douban/components/comments.vue: Unexpected token (46:4)\n\n  44 | \t\t\t\t\tthis.count += 10\n  45 | \t\t\t\t\tthis.more = false,\n> 46 | \t\t\t\t}.bind(this)\n     | \t\t\t\t^\n  47 | \t\t\t})\n  48 | \t\t}\n  49 | \t}\n");
+
+/***/ }),
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23359,11 +23633,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data() {
+		return {
+			bottomNav: 'find'
+		};
+	},
+	methods: {
+		handleChange(val) {
+			this.bottomNav = val;
+		}
+	}
+});
 
 /***/ }),
-/* 15 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23372,11 +23665,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data() {
+		return {
+			bottomNav: 'hots'
+		};
+	},
+	methods: {
+		handleChange(val) {
+			this.bottomNav = val;
+		}
+	},
+	mounted() {
+		$('main').css({ top: $('header').outerHeight() + $('nav').outerHeight() });
+	}
+});
 
 /***/ }),
-/* 16 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23387,11 +23715,198 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data() {
+		return {
+			film: {
+				images: {
+					large: ''
+				},
+				alt: '',
+				title: '',
+				year: '',
+				genres: '',
+				original_title: '',
+				mainland_pubdate: '',
+				durations: '',
+				rating: {
+					average: ''
+				},
+				wish_count: '',
+				summary: '',
+				id: ''
+			},
+			load: true
+		};
+	},
+	mounted() {
+		var src = window.location.hash.substr(8, 8);
+		console.log(src);
+		$.ajax({
+			type: 'get',
+			url: 'http://api.douban.com/v2/movie/subject/' + src,
+			data: {
+				apikey: '0b2bdeda43b5688921839c8ecb20399b'
+			},
+			dataType: 'jsonp',
+			success: function (data) {
+				console.log(data);
+				this.film = data;
+				this.load = false;
+			}.bind(this)
+		});
+	}
+});
 
 /***/ }),
-/* 17 */
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data() {
+		return {
+			movie: [],
+			bool: true,
+			city: '广州',
+			start: 0,
+			count: 8,
+			more: false
+		};
+	},
+	mounted() {
+		this.showmore();
+	},
+	methods: {
+		showmore() {
+			$.ajax({
+				type: 'get',
+				url: 'https://api.douban.com/v2/movie/in_theaters',
+				data: {
+					apikey: '0b2bdeda43b5688921839c8ecb20399b',
+					city: this.city,
+					start: this.start,
+					count: this.count
+				},
+				dataType: 'jsonp',
+				success: function (data) {
+					console.log(data.subjects);
+					this.movie = this.movie.concat(data.subjects);
+					this.start += 8;
+					this.bool = false;
+					this.more = true;
+				}.bind(this)
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: D:/project/v-douban/components/reviews.vue: Unexpected token (47:4)\n\n  45 | \t\t\t\t\tthis.count += 5\n  46 | \t\t\t\t\tthis.more = true,\n> 47 | \t\t\t\t}.bind(this)\n     | \t\t\t\t^\n  48 | \t\t\t})\n  49 | \t\t}\n  50 | \t}\n");
+
+/***/ }),
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data() {
+		return {
+			bottomNav: 'user'
+		};
+	},
+	methods: {
+		handleChange(val) {
+			this.bottomNav = val;
+		}
+	}
+});
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -23405,7 +23920,7 @@ exports.push([module.i, "/*!\n * Muse UI v2.0.3 (https://github.com/myronliu347/
 
 
 /***/ }),
-/* 18 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(true);
@@ -23413,13 +23928,13 @@ exports = module.exports = __webpack_require__(0)(true);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"user.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"prevue.vue","sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 19 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(true);
@@ -23427,13 +23942,13 @@ exports = module.exports = __webpack_require__(0)(true);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"hot.vue","sourceRoot":""}]);
+exports.push([module.i, "\n.comments[data-v-5e18e788]{\n\tpadding: 20px;\n\toverflow: hidden;\n}\n.info[data-v-5e18e788]{\n\toverflow: hidden;\n\tborder-bottom: 1px solid #eee;\n\tmargin-bottom: 10px;\n}\n.user[data-v-5e18e788]{\n\tdisplay: block;\n\tfloat: left;\n}\n.user img[data-v-5e18e788]{\n\tborder-radius: 50%;\n}\n.text[data-v-5e18e788]{\n\tfloat: left;\n\toverflow: hidden;\n\twidth: 80%;\n\tmargin-left: 10px;\n}\n.text p[data-v-5e18e788]{\n\tfloat: left;\n}\n.text .count[data-v-5e18e788]{\n\tfloat: right;\n}\n.text .icon[data-v-5e18e788]{\n\tfloat: right;\n\tline-height: 100%;\n\tmargin: 8px 0 0 5px;\n}\n.more[data-v-5e18e788]{\n\ttext-align: center;\n\tline-height: 60px;\n\tcolor: plum;\n\tfont-size: 1.5em;\n\tfont-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/comments.vue?1ceb1c2f"],"names":[],"mappings":";AAsDA;CACA,cAAA;CACA,iBAAA;CACA;AACA;CACA,iBAAA;CACA,8BAAA;CACA,oBAAA;CACA;AACA;CACA,eAAA;CACA,YAAA;CACA;AACA;CACA,mBAAA;CACA;AACA;CACA,YAAA;CACA,iBAAA;CACA,WAAA;CACA,kBAAA;CACA;AACA;CACA,YAAA;CACA;AACA;CACA,aAAA;CACA;AACA;CACA,aAAA;CACA,kBAAA;CACA,oBAAA;CACA;AACA;CACA,mBAAA;CACA,kBAAA;CACA,YAAA;CACA,iBAAA;CACA,oCAAA;CACA","file":"comments.vue","sourcesContent":["<template>\r\n\t<div class=\"comments\">\r\n\t\t<div v-for=\"key in comments\" class=\"info\">\r\n\t\t\t<a class=\"user\" :href=\"key.author.alt\"><img :src=\"key.author.avatar\" alt=\"\" /></a>\r\n\t\t\t<div class=\"text\">\r\n\t\t\t\t<p v-text=\"key.author.name\"></p>\r\n\t\t\t\t<p class=\"icon\"><mu-icon value=\"thumb_up\" color=\"orange\"/></p>\r\n\t\t\t\t<p v-text=\"key.useful_count\" class=\"count\"></p>\r\n\t\t\t\t<p v-text=\"key.content\"></p>\r\n\t\t\t\t<p v-text=\"key.created_at\"></p>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"more\" @click=\"showmore()\" v-show=\"more\">查看更多</div>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\texport default {\r\n\t\tdata () {\r\n\t\t\treturn {\r\n\t\t\t\tcomments:[],\r\n\t\t\t\tcount:10,\r\n\t\t\t\tmore:true,\r\n\t\t\t}\r\n\t\t},\r\n\t\tmounted (){\r\n\t\t\tthis.showmore()\r\n\t\t},\r\n\t\tmethods:{\r\n\t\t\tshowmore(){\r\n\t\t\t\tvar src = window.location.hash.slice(8)\r\n\t\t\t\tconsole.log(src)\r\n\t\t\t\t$.ajax({\r\n\t\t\t\t\ttype: 'get',\r\n\t\t\t\t\turl: 'http://api.douban.com/v2/movie/subject/' + src,\r\n\t\t\t\t\tdata: {\r\n\t\t\t\t\t\tapikey: '0b2bdeda43b5688921839c8ecb20399b',\r\n\t\t\t\t\t\tcount: this.count,\r\n\t\t\t\t\t},\r\n\t\t\t\t\tdataType: 'jsonp',\r\n\t\t\t\t\tsuccess: function(data) {\r\n\t\t\t\t\t\tconsole.log(data)\r\n\t\t\t\t\t\tthis.comments = data.comments\r\n\t\t\t\t\t\tthis.count += 10\r\n\t\t\t\t\t\tthis.more = false,\r\n\t\t\t\t\t}.bind(this)\r\n\t\t\t\t})\r\n\t\t\t}\r\n\t\t}\r\n\t\t\r\n\t}\r\n</script>\r\n\r\n<style scoped>\r\n\t.comments{\r\n\t\tpadding: 20px;\r\n\t\toverflow: hidden;\r\n\t}\r\n\t.info{\r\n\t\toverflow: hidden;\r\n\t\tborder-bottom: 1px solid #eee;\r\n\t\tmargin-bottom: 10px;\r\n\t}\r\n\t.user{\r\n\t\tdisplay: block;\r\n\t\tfloat: left;\r\n\t}\r\n\t.user img{\r\n\t\tborder-radius: 50%;\r\n\t}\r\n\t.text{\r\n\t\tfloat: left;\r\n\t\toverflow: hidden;\r\n\t\twidth: 80%;\r\n\t\tmargin-left: 10px;\r\n\t}\r\n\t.text p{\r\n\t\tfloat: left;\r\n\t}\r\n\t.text .count{\r\n\t\tfloat: right;\r\n\t}\r\n\t.text .icon{\r\n\t\tfloat: right;\r\n\t\tline-height: 100%;\r\n\t\tmargin: 8px 0 0 5px;\r\n\t}\r\n\t.more{\r\n\t\ttext-align: center;\r\n\t\tline-height: 60px;\r\n\t\tcolor: plum;\r\n\t\tfont-size: 1.5em;\r\n\t\tfont-family: \"微软雅黑\";\r\n\t}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 20 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(true);
@@ -23441,13 +23956,83 @@ exports = module.exports = __webpack_require__(0)(true);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"find.vue","sourceRoot":""}]);
+exports.push([module.i, "\n.detail{\n\tdisplay: block;\n\tcolor: #000;\n\tpadding: 5px 20px;\n}\n.more{\n\ttext-align: center;\n\tline-height: 60px;\n\tcolor: plum;\n\tfont-size: 1.5em;\n\tfont-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/reviews.vue?774d879e"],"names":[],"mappings":";AAsDA;CACA,eAAA;CACA,YAAA;CACA,kBAAA;CACA;AACA;CACA,mBAAA;CACA,kBAAA;CACA,YAAA;CACA,iBAAA;CACA,oCAAA;CACA","file":"reviews.vue","sourcesContent":["<template>\r\n\t<div class=\"reviews\">\r\n\t\t<a v-for=\"key in reviews\" :href=\"key.alt\" class=\"detail\">\r\n\t\t\t<h3 v-text=\"key.title\"></h3>\r\n\t\t\t<p v-text=\"key.author.name\"></p>\r\n\t\t\t<p v-text=\"key.summary\"></p>\r\n\t\t\t<p>\r\n\t\t\t\t<span>顶：</span>\r\n\t\t\t\t<span v-text=\"key.useful_count\"></span>\r\n\t\t\t\t<span>踩：</span>\r\n\t\t\t\t<span v-text=\"key.useless_count\"></span>\r\n\t\t\t</p>\r\n\t\t</a>\r\n\t\t<div class=\"more\" @click=\"showmore()\" v-show=\"more\">查看更多</div>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\texport default {\r\n\t\tdata () {\r\n\t\t\treturn {\r\n\t\t\t\treviews:[],\r\n\t\t\t\tcount:5,\r\n\t\t\t\tmore:false,\r\n\t\t\t}\r\n\t\t},\r\n\t\tmounted (){\r\n\t\t\tthis.showmore()\r\n\t\t},\r\n\t\tmethods: {\r\n\t\t\tshowmore(){\r\n\t\t\t\tvar src = window.location.hash.slice(8)\r\n\t\t\t\tconsole.log(src)\r\n\t\t\t\t$.ajax({\r\n\t\t\t\t\ttype: 'get',\r\n\t\t\t\t\turl: 'http://api.douban.com/v2/movie/subject/' + src,\r\n\t\t\t\t\tdata: {\r\n\t\t\t\t\t\tapikey: '0b2bdeda43b5688921839c8ecb20399b',\r\n\t\t\t\t\t\tcount: this.count,\r\n\t\t\t\t\t},\r\n\t\t\t\t\tdataType: 'jsonp',\r\n\t\t\t\t\tsuccess: function(data) {\r\n\t\t\t\t\t\tconsole.log(data)\r\n\t\t\t\t\t\tthis.reviews = data.reviews\r\n\t\t\t\t\t\tthis.count += 5\r\n\t\t\t\t\t\tthis.more = true,\r\n\t\t\t\t\t}.bind(this)\r\n\t\t\t\t})\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n</script>\r\n\r\n<style>\r\n\t.detail{\r\n\t\tdisplay: block;\r\n\t\tcolor: #000;\r\n\t\tpadding: 5px 20px;\r\n\t}\r\n\t.more{\r\n\t\ttext-align: center;\r\n\t\tline-height: 60px;\r\n\t\tcolor: plum;\r\n\t\tfont-size: 1.5em;\r\n\t\tfont-family: \"微软雅黑\";\r\n\t}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 21 */
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.load[data-v-74682be7] {\n\tposition: fixed;\n\ttop: 50%;\n\tleft: 50%;\n\tmargin: -30px 0 0 -30px;\n}\n.movie[data-v-74682be7] {\n\tdisplay: block;\n\twidth: 100%;\n\tpadding: 15px 10px;\n\ttext-align: left;\n\tborder-bottom: 1px solid #ddd;\n\tcolor: #000;\n\toverflow: hidden;\n}\n.movie>div[data-v-74682be7] {\n\tfloat: left;\n\tmargin: 0 10px;\n\tline-height: 100%;\n}\n.movie .intro[data-v-74682be7] {\n\twidth: 60%;\n}\n.showmore[data-v-74682be7]{\n\ttext-align: center;\n\tline-height: 60px;\n\tcolor: plum;\n\tfont-size: 1.5em;\n\tfont-family: \"\\5FAE\\8F6F\\96C5\\9ED1\";\n}\n.bottom[data-v-74682be7]{\n\twidth: 100%;\n\theight: 56px;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/played.vue?45d7afa4"],"names":[],"mappings":";AAkEA;CACA,gBAAA;CACA,SAAA;CACA,UAAA;CACA,wBAAA;CACA;AAEA;CACA,eAAA;CACA,YAAA;CACA,mBAAA;CACA,iBAAA;CACA,8BAAA;CACA,YAAA;CACA,iBAAA;CACA;AAEA;CACA,YAAA;CACA,eAAA;CACA,kBAAA;CACA;AAEA;CACA,WAAA;CACA;AACA;CACA,mBAAA;CACA,kBAAA;CACA,YAAA;CACA,iBAAA;CACA,oCAAA;CACA;AACA;CACA,YAAA;CACA,aAAA;CACA","file":"played.vue","sourcesContent":["<template>\r\n\t<div class=\"content\">\r\n\t\t<div v-show='bool' class=\"load\">\r\n\t\t  \t<mu-circular-progress :size=\"60\" :strokeWidth=\"5\" color=\"plum\"/>\r\n\t\t</div>\r\n\t\t<div class=\"movielist\">\r\n\t\t\t<a v-for='key in movie' :href=\"'#/intro/'+key.id\" class=\"movie\">\r\n\t\t\t\t<div><img :src=\"key.images.medium\"/></div>\r\n\t\t\t\t<div class=\"intro\">\r\n\t\t\t\t\t<h3 v-text='key.title'></h3>\r\n\t\t\t\t\t<p><span>评分：</span><span v-text='key.rating.average'></span></p>\r\n\t\t\t\t\t<p><span>导演：</span><span v-text='key.directors[0].name'></span></p>\r\n\t\t\t\t\t<p class=\"casts\">\r\n\t\t\t\t\t\t<span>主演：</span>\r\n\t\t\t\t\t\t<span v-for='arr in key.casts' v-text='arr.name+\" / \"'></span>\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<p><span v-text='key.collect_count'></span><span>人看过</span></p>\r\n\t\t\t\t</div>\r\n\t\t\t</a>\r\n\t\t</div>\r\n\t\t<div class=\"showmore\" @click=\"showmore()\" v-show='more'>查看更多</div>\r\n\t\t<div class=\"bottom\"></div>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\texport default {\r\n\t\tdata() {\r\n\t\t\treturn {\r\n\t\t\t\tmovie: [],\r\n\t\t\t\tbool:true,\r\n\t\t\t\tcity:'广州',\r\n\t\t\t\tstart:0,\r\n\t\t\t\tcount:8,\r\n\t\t\t\tmore:false,\r\n\t\t\t}\r\n\t\t},\r\n\t\tmounted() {\r\n\t\t\tthis.showmore()\r\n\t\t},\r\n\t\tmethods:{\r\n\t\t\tshowmore(){\r\n\t\t\t\t$.ajax({\r\n\t\t\t\t\ttype: 'get',\r\n\t\t\t\t\turl: 'https://api.douban.com/v2/movie/in_theaters',\r\n\t\t\t\t\tdata: {\r\n\t\t\t\t\t\tapikey: '0b2bdeda43b5688921839c8ecb20399b',\r\n\t\t\t\t\t\tcity: this.city,\r\n\t\t\t\t\t\tstart: this.start,\r\n\t\t\t\t\t\tcount: this.count,\r\n\t\t\t\t\t},\r\n\t\t\t\t\tdataType: 'jsonp',\r\n\t\t\t\t\tsuccess: function(data) {\r\n\t\t\t\t\t\tconsole.log(data.subjects)\r\n\t\t\t\t\t\tthis.movie = this.movie.concat(data.subjects)\r\n\t\t\t\t\t\tthis.start += 8\r\n\t\t\t\t\t\tthis.bool = false\r\n\t\t\t\t\t\tthis.more = true\r\n\t\t\t\t\t}.bind(this)\r\n\t\t\t\t})\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n</script>\r\n\r\n<style scoped>\r\n\t.load {\r\n\t\tposition: fixed;\r\n\t\ttop: 50%;\r\n\t\tleft: 50%;\r\n\t\tmargin: -30px 0 0 -30px;\r\n\t}\r\n\t\r\n\t.movie {\r\n\t\tdisplay: block;\r\n\t\twidth: 100%;\r\n\t\tpadding: 15px 10px;\r\n\t\ttext-align: left;\r\n\t\tborder-bottom: 1px solid #ddd;\r\n\t\tcolor: #000;\r\n\t\toverflow: hidden;\r\n\t}\r\n\t\r\n\t.movie>div {\r\n\t\tfloat: left;\r\n\t\tmargin: 0 10px;\r\n\t\tline-height: 100%;\r\n\t}\r\n\t\r\n\t.movie .intro {\r\n\t\twidth: 60%;\r\n\t}\r\n\t.showmore{\r\n\t\ttext-align: center;\r\n\t\tline-height: 60px;\r\n\t\tcolor: plum;\r\n\t\tfont-size: 1.5em;\r\n\t\tfont-family: \"微软雅黑\";\r\n\t}\r\n\t.bottom{\r\n\t\twidth: 100%;\r\n\t\theight: 56px;\r\n\t}\r\n</style>"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\nh2[data-v-a0fed8f0],p[data-v-a0fed8f0]{\n\t\tmargin: 0;\n}\n.load[data-v-a0fed8f0] {\n\t\tposition: fixed;\n\t\ttop: 50%;\n\t\tleft: 50%;\n\t\tmargin: -30px 0 0 -30px;\n}\n.poster[data-v-a0fed8f0] {\n\t\tdisplay: block;\n\t\tpadding: 20px;\n\t\ttext-align: center;\n}\n.poster img[data-v-a0fed8f0] {\n\t\twidth: 150px;\n}\n.info[data-v-a0fed8f0] {\n\t\tpadding: 20px;\n\t\tposition: relative;\n}\n.info .text[data-v-a0fed8f0]{\n\t\tcolor: #000;\n\t\toverflow: hidden;  \n    \ttext-overflow: ellipsis;  \n    \tdisplay: -webkit-box;  \n   \t\t-webkit-line-clamp: 5;  \n    \t-webkit-box-orient: vertical;\n}\n.rating[data-v-a0fed8f0] {\n\t\tposition: absolute;\n\t\ttop: 25px;\n\t\tright: 35px;\n\t\twidth: 100px;\n\t\tpadding: 10px 0;\n\t\ttext-align: center;\n\t\tbackground: #eee;\n}\n.center[data-v-a0fed8f0]{\n\t\tbackground: #eee;\n}\n.center a[data-v-a0fed8f0]{\n\t\tdisplay: inline-block;\n\t\twidth: 49.5%;\n\t\ttext-align: center;\n\t\tline-height: 50px;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/intro.vue?20ffa23e"],"names":[],"mappings":";AAiFA;EACA,UAAA;CACA;AACA;EACA,gBAAA;EACA,SAAA;EACA,UAAA;EACA,wBAAA;CACA;AACA;EACA,eAAA;EACA,cAAA;EACA,mBAAA;CACA;AACA;EACA,aAAA;CACA;AACA;EACA,cAAA;EACA,mBAAA;CACA;AACA;EACA,YAAA;EACA,iBAAA;KACA,wBAAA;KACA,qBAAA;KACA,sBAAA;KACA,6BAAA;CACA;AACA;EACA,mBAAA;EACA,UAAA;EACA,YAAA;EACA,aAAA;EACA,gBAAA;EACA,mBAAA;EACA,iBAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,sBAAA;EACA,aAAA;EACA,mBAAA;EACA,kBAAA;CACA","file":"intro.vue","sourcesContent":["<template>\r\n\t<div class=\"content\">\r\n\t\t<div v-show='load' class=\"load\">\r\n\t\t  \t<mu-circular-progress :size=\"60\" :strokeWidth=\"5\" color=\"plum\"/>\r\n\t\t</div>\r\n\t\t<div class=\"poster\"><img :src=\"film.images.large\"/></div>\r\n\t\t<div class=\"info\">\r\n\t\t\t<h2 v-text='film.title'></h2>\r\n\t\t\t<p>\r\n\t\t\t\t<span v-text='film.year+\" / \"'></span>\r\n\t\t\t\t<span v-for='key in film.genres' v-text='key+\" / \"'></span>\r\n\t\t\t</p>\r\n\t\t\t<p><span>原名：</span><span v-text='film.original_title'></span></p>\r\n\t\t\t<p><span>上映时间：</span><span v-text='film.mainland_pubdate'></span></p>\r\n\t\t\t<p><span>片长：</span><span v-text='film.durations[0]'></span></p>\r\n\t\t\t<p>简介</p>\r\n\t\t\t<a v-text='film.summary' :href=\"film.alt\" class=\"text\"></a>\r\n\t\t\t<div class=\"rating\">\r\n\t\t\t\t<span>豆瓣评分</span>\r\n\t\t\t\t<h2 v-text='film.rating.average'></h2>\r\n\t\t\t\t<span>多少人想看</span>\r\n\t\t\t\t<p v-text='film.wish_count'></p>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div>\r\n\t\t\t<div class=\"center\">\r\n\t\t\t\t<a :href=\"'#/intro/'+film.id+'/comments'\">短评</a>\r\n\t\t\t\t<a :href=\"'#/intro/'+film.id+'/reviews'\">影评</a>\r\n\t\t\t</div>\r\n\t\t\t<router-view></router-view>\r\n\t\t</div>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\texport default {\r\n\t\tdata() {\r\n\t\t\treturn {\r\n\t\t\t\tfilm: {\r\n\t\t\t\t\timages:{\r\n\t\t\t\t\t\tlarge:''\r\n\t\t\t\t\t},\r\n\t\t\t\t\talt:'',\r\n\t\t\t\t\ttitle:'',\r\n\t\t\t\t\tyear:'',\r\n\t\t\t\t\tgenres:'',\r\n\t\t\t\t\toriginal_title:'',\r\n\t\t\t\t\tmainland_pubdate:'',\r\n\t\t\t\t\tdurations:'',\r\n\t\t\t\t\trating:{\r\n\t\t\t\t\t\taverage:''\r\n\t\t\t\t\t},\r\n\t\t\t\t\twish_count:'',\r\n\t\t\t\t\tsummary:'',\r\n\t\t\t\t\tid:'',\r\n\t\t\t\t},\r\n\t\t\t\tload: true,\r\n\t\t\t}\r\n\t\t},\r\n\t\tmounted() {\r\n\t\t\tvar src = window.location.hash.substr(8,8)\r\n\t\t\tconsole.log(src)\r\n\t\t\t$.ajax({\r\n\t\t\t\ttype: 'get',\r\n\t\t\t\turl: 'http://api.douban.com/v2/movie/subject/' + src,\r\n\t\t\t\tdata: {\r\n\t\t\t\t\tapikey: '0b2bdeda43b5688921839c8ecb20399b',\r\n\t\t\t\t},\r\n\t\t\t\tdataType: 'jsonp',\r\n\t\t\t\tsuccess: function(data) {\r\n\t\t\t\t\tconsole.log(data)\r\n\t\t\t\t\tthis.film = data\r\n\t\t\t\t\tthis.load = false\r\n\t\t\t\t}.bind(this)\r\n\t\t\t})\r\n\r\n\t\t}\r\n\t}\r\n</script>\r\n\r\n<style scoped>\r\n\th2,p{\r\n\t\tmargin: 0;\r\n\t}\r\n\t.load {\r\n\t\tposition: fixed;\r\n\t\ttop: 50%;\r\n\t\tleft: 50%;\r\n\t\tmargin: -30px 0 0 -30px;\r\n\t}\t\r\n\t.poster {\r\n\t\tdisplay: block;\r\n\t\tpadding: 20px;\r\n\t\ttext-align: center;\r\n\t}\r\n\t.poster img {\r\n\t\twidth: 150px;\r\n\t}\r\n\t.info {\r\n\t\tpadding: 20px;\r\n\t\tposition: relative;\r\n\t}\r\n\t.info .text{\r\n\t\tcolor: #000;\r\n\t\toverflow: hidden;  \r\n    \ttext-overflow: ellipsis;  \r\n    \tdisplay: -webkit-box;  \r\n   \t\t-webkit-line-clamp: 5;  \r\n    \t-webkit-box-orient: vertical; \r\n\t}\r\n\t.rating {\r\n\t\tposition: absolute;\r\n\t\ttop: 25px;\r\n\t\tright: 35px;\r\n\t\twidth: 100px;\r\n\t\tpadding: 10px 0;\r\n\t\ttext-align: center;\r\n\t\tbackground: #eee;\r\n\t}\r\n\t.center{\r\n\t\tbackground: #eee;\r\n\t}\r\n\t.center a{\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 49.5%;\r\n\t\ttext-align: center;\r\n\t\tline-height: 50px;\r\n\t}\r\n</style>"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\nfooter {\n\tposition: fixed;\n\tbottom: 0px;\n\twidth: 100%;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/user.vue?05af5b80"],"names":[],"mappings":";AA8BA;CACA,gBAAA;CACA,YAAA;CACA,YAAA;CACA","file":"user.vue","sourcesContent":["<template>\r\n\t<div>\r\n\t\t<footer>\r\n\t\t\t<mu-paper>\r\n\t\t\t\t<mu-bottom-nav :value=\"bottomNav\" @change=\"handleChange\">\r\n\t\t\t\t\t<mu-bottom-nav-item value=\"hots\" title=\"热映\" href=\"/#/hots\" icon=\"event seat\" />\r\n\t\t\t\t\t<mu-bottom-nav-item value=\"find\" title=\"找片\" href=\"/#/find\" icon=\"visibility\" />\r\n\t\t\t\t\t<mu-bottom-nav-item value=\"user\" title=\"我的\" href=\"/#/user\" icon=\"face\" />\r\n\t\t\t\t</mu-bottom-nav>\r\n\t\t\t</mu-paper>\r\n\t\t</footer>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\texport default {\r\n\t\tdata() {\r\n\t\t\treturn {\r\n\t\t\t\tbottomNav: 'user'\r\n\t\t\t}\r\n\t\t},\r\n\t\tmethods: {\r\n\t\t\thandleChange(val) {\r\n\t\t\t\tthis.bottomNav = val\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n</script>\r\n\r\n<style>\r\n\tfooter {\r\n\t\tposition: fixed;\r\n\t\tbottom: 0px;\r\n\t\twidth: 100%;\r\n\t}\r\n</style>"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\nheader{\n\tpadding:5px 5px;\n\tline-height: 30px;\n\tbackground: plum;\n\tposition: fixed;\n\ttop: 0px;\n\tleft: 0px;\n\tright: 0px;\n}\nheader span{\n\tdisplay: inline-block;\n\twidth: 15%;\n\ttext-align: center;\n\tcolor: #fff;\n}\nheader input{\n\twidth: 80%;\n\tborder-radius: 5px;\n\tpadding: 1px 5px;\n\tbackground: #eee;\n}\nnav{\n\tbackground: #fff;\n\tposition: fixed;\n\ttop: 46px;\n\tleft: 0;\n\tright: 0;\n\tborder-bottom: 1px solid #ddd;\n}\nnav a{\n\tdisplay: inline-block;\n\twidth: 49.5%;\n\ttext-align: center;\n\tline-height: 50px;\n}\nmain{\n\tposition: absolute;\n\tbottom: 60px;\n\tz-index: -1;\n}\nfooter {\n\tposition: fixed;\n\tbottom: 0px;\n\twidth: 100%;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/hots.vue?f8195c04"],"names":[],"mappings":";AA4CA;CACA,gBAAA;CACA,kBAAA;CACA,iBAAA;CACA,gBAAA;CACA,SAAA;CACA,UAAA;CACA,WAAA;CACA;AACA;CACA,sBAAA;CACA,WAAA;CACA,mBAAA;CACA,YAAA;CACA;AACA;CACA,WAAA;CACA,mBAAA;CACA,iBAAA;CACA,iBAAA;CACA;AACA;CACA,iBAAA;CACA,gBAAA;CACA,UAAA;CACA,QAAA;CACA,SAAA;CACA,8BAAA;CACA;AACA;CACA,sBAAA;CACA,aAAA;CACA,mBAAA;CACA,kBAAA;CACA;AACA;CACA,mBAAA;CACA,aAAA;CACA,YAAA;CACA;AACA;CACA,gBAAA;CACA,YAAA;CACA,YAAA;CACA","file":"hots.vue","sourcesContent":["<template>\r\n\t<div>\r\n\t\t<header>\r\n\t\t\t<span>广州</span>\r\n\t\t\t<input type=\"text\" placeholder=\"电影/电视剧/影人\"/>\r\n\t\t</header>\r\n\t\t<nav>\r\n\t\t\t<a href=\"#/hots/played\">正在热映</a>\r\n\t\t\t<a href=\"#/hots/prevue\">即将上映</a>\r\n\t\t</nav>\r\n\t\t<main>\r\n\t\t\t<router-view></router-view>\r\n\t\t</main>\r\n\t\t<footer>\r\n\t\t\t<mu-paper>\r\n\t\t\t\t<mu-bottom-nav :value=\"bottomNav\" @change=\"handleChange\">\r\n\t\t\t\t\t<mu-bottom-nav-item value=\"hots\" title=\"热映\" href=\"/#/hots\" icon=\"event seat\" />\r\n\t\t\t\t\t<mu-bottom-nav-item value=\"find\" title=\"找片\" href=\"/#/find\" icon=\"visibility\" />\r\n\t\t\t\t\t<mu-bottom-nav-item value=\"user\" title=\"我的\" href=\"/#/user\" icon=\"face\" />\r\n\t\t\t\t</mu-bottom-nav>\r\n\t\t\t</mu-paper>\r\n\t\t</footer>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\texport default {\r\n\t\tdata() {\r\n\t\t\treturn {\r\n\t\t\t\tbottomNav: 'hots'\r\n\t\t\t}\r\n\t\t},\r\n\t\tmethods: {\r\n\t\t\thandleChange(val) {\r\n\t\t\t\tthis.bottomNav = val\r\n\t\t\t}\r\n\t\t},\r\n\t\tmounted() {\r\n\t\t\t$('main').css({top:$('header').outerHeight()+$('nav').outerHeight()})\r\n\t\t}\r\n\t}\r\n</script>\r\n\r\n<style>\r\n\theader{\r\n\t\tpadding:5px 5px;\r\n\t\tline-height: 30px;\r\n\t\tbackground: plum;\r\n\t\tposition: fixed;\r\n\t\ttop: 0px;\r\n\t\tleft: 0px;\r\n\t\tright: 0px;\r\n\t}\r\n\theader span{\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 15%;\r\n\t\ttext-align: center;\r\n\t\tcolor: #fff;\r\n\t}\r\n\theader input{\r\n\t\twidth: 80%;\r\n\t\tborder-radius: 5px;\r\n\t\tpadding: 1px 5px;\r\n\t\tbackground: #eee;\r\n\t}\r\n\tnav{\r\n\t\tbackground: #fff;\r\n\t\tposition: fixed;\r\n\t\ttop: 46px;\r\n\t\tleft: 0;\r\n\t\tright: 0;\r\n\t\tborder-bottom: 1px solid #ddd;\r\n\t}\r\n\tnav a{\r\n\t\tdisplay: inline-block;\r\n\t\twidth: 49.5%;\r\n\t\ttext-align: center;\r\n\t\tline-height: 50px;\r\n\t}\r\n\tmain{\r\n\t\tposition: absolute;\r\n\t\tbottom: 60px;\r\n\t\tz-index: -1;\r\n\t}\r\n\tfooter {\r\n\t\tposition: fixed;\r\n\t\tbottom: 0px;\r\n\t\twidth: 100%;\r\n\t}\r\n</style>"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\nfooter {\n\tposition: fixed;\n\tbottom: 0px;\n\twidth: 100%;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/find.vue?f44fce00"],"names":[],"mappings":";AA8BA;CACA,gBAAA;CACA,YAAA;CACA,YAAA;CACA","file":"find.vue","sourcesContent":["<template>\r\n\t<div>\r\n\t\t<footer>\r\n\t\t\t<mu-paper>\r\n\t\t\t\t<mu-bottom-nav :value=\"bottomNav\" @change=\"handleChange\">\r\n\t\t\t\t\t<mu-bottom-nav-item value=\"hots\" title=\"热映\" href=\"/#/hots\" icon=\"event seat\" />\r\n\t\t\t\t\t<mu-bottom-nav-item value=\"find\" title=\"找片\" href=\"/#/find\" icon=\"visibility\" />\r\n\t\t\t\t\t<mu-bottom-nav-item value=\"user\" title=\"我的\" href=\"/#/user\" icon=\"face\" />\r\n\t\t\t\t</mu-bottom-nav>\r\n\t\t\t</mu-paper>\r\n\t\t</footer>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\texport default {\r\n\t\tdata() {\r\n\t\t\treturn {\r\n\t\t\t\tbottomNav: 'find'\r\n\t\t\t}\r\n\t\t},\r\n\t\tmethods: {\r\n\t\t\thandleChange(val) {\r\n\t\t\t\tthis.bottomNav = val\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n</script>\r\n\r\n<style>\r\n\tfooter {\r\n\t\tposition: fixed;\r\n\t\tbottom: 0px;\r\n\t\twidth: 100%;\r\n\t}\r\n</style>"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -23484,7 +24069,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(22);
+	fixUrls = __webpack_require__(37);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -23760,7 +24345,7 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
-/* 22 */
+/* 37 */
 /***/ (function(module, exports) {
 
 
@@ -23855,11 +24440,359 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 23 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div')
+  return _c("div")
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-0a306917", module.exports)
+  }
+}
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "comments"
+  }, [_vm._l((_vm.comments), function(key) {
+    return _c('div', {
+      staticClass: "info"
+    }, [_c('a', {
+      staticClass: "user",
+      attrs: {
+        "href": key.author.alt
+      }
+    }, [_c('img', {
+      attrs: {
+        "src": key.author.avatar,
+        "alt": ""
+      }
+    })]), _vm._v(" "), _c('div', {
+      staticClass: "text"
+    }, [_c('p', {
+      domProps: {
+        "textContent": _vm._s(key.author.name)
+      }
+    }), _vm._v(" "), _c('p', {
+      staticClass: "icon"
+    }, [_c('mu-icon', {
+      attrs: {
+        "value": "thumb_up",
+        "color": "orange"
+      }
+    })], 1), _vm._v(" "), _c('p', {
+      staticClass: "count",
+      domProps: {
+        "textContent": _vm._s(key.useful_count)
+      }
+    }), _vm._v(" "), _c('p', {
+      domProps: {
+        "textContent": _vm._s(key.content)
+      }
+    }), _vm._v(" "), _c('p', {
+      domProps: {
+        "textContent": _vm._s(key.created_at)
+      }
+    })])])
+  }), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.more),
+      expression: "more"
+    }],
+    staticClass: "more",
+    on: {
+      "click": function($event) {
+        _vm.showmore()
+      }
+    }
+  }, [_vm._v("查看更多")])], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5e18e788", module.exports)
+  }
+}
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "reviews"
+  }, [_vm._l((_vm.reviews), function(key) {
+    return _c('a', {
+      staticClass: "detail",
+      attrs: {
+        "href": key.alt
+      }
+    }, [_c('h3', {
+      domProps: {
+        "textContent": _vm._s(key.title)
+      }
+    }), _vm._v(" "), _c('p', {
+      domProps: {
+        "textContent": _vm._s(key.author.name)
+      }
+    }), _vm._v(" "), _c('p', {
+      domProps: {
+        "textContent": _vm._s(key.summary)
+      }
+    }), _vm._v(" "), _c('p', [_c('span', [_vm._v("顶：")]), _vm._v(" "), _c('span', {
+      domProps: {
+        "textContent": _vm._s(key.useful_count)
+      }
+    }), _vm._v(" "), _c('span', [_vm._v("踩：")]), _vm._v(" "), _c('span', {
+      domProps: {
+        "textContent": _vm._s(key.useless_count)
+      }
+    })])])
+  }), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.more),
+      expression: "more"
+    }],
+    staticClass: "more",
+    on: {
+      "click": function($event) {
+        _vm.showmore()
+      }
+    }
+  }, [_vm._v("查看更多")])], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6406a0b7", module.exports)
+  }
+}
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "content"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.bool),
+      expression: "bool"
+    }],
+    staticClass: "load"
+  }, [_c('mu-circular-progress', {
+    attrs: {
+      "size": 60,
+      "strokeWidth": 5,
+      "color": "plum"
+    }
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "movielist"
+  }, _vm._l((_vm.movie), function(key) {
+    return _c('a', {
+      staticClass: "movie",
+      attrs: {
+        "href": '#/intro/' + key.id
+      }
+    }, [_c('div', [_c('img', {
+      attrs: {
+        "src": key.images.medium
+      }
+    })]), _vm._v(" "), _c('div', {
+      staticClass: "intro"
+    }, [_c('h3', {
+      domProps: {
+        "textContent": _vm._s(key.title)
+      }
+    }), _vm._v(" "), _c('p', [_c('span', [_vm._v("评分：")]), _c('span', {
+      domProps: {
+        "textContent": _vm._s(key.rating.average)
+      }
+    })]), _vm._v(" "), _c('p', [_c('span', [_vm._v("导演：")]), _c('span', {
+      domProps: {
+        "textContent": _vm._s(key.directors[0].name)
+      }
+    })]), _vm._v(" "), _c('p', {
+      staticClass: "casts"
+    }, [_c('span', [_vm._v("主演：")]), _vm._v(" "), _vm._l((key.casts), function(arr) {
+      return _c('span', {
+        domProps: {
+          "textContent": _vm._s(arr.name + " / ")
+        }
+      })
+    })], 2), _vm._v(" "), _c('p', [_c('span', {
+      domProps: {
+        "textContent": _vm._s(key.collect_count)
+      }
+    }), _c('span', [_vm._v("人看过")])])])])
+  })), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.more),
+      expression: "more"
+    }],
+    staticClass: "showmore",
+    on: {
+      "click": function($event) {
+        _vm.showmore()
+      }
+    }
+  }, [_vm._v("查看更多")]), _vm._v(" "), _c('div', {
+    staticClass: "bottom"
+  })])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-74682be7", module.exports)
+  }
+}
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "content"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.load),
+      expression: "load"
+    }],
+    staticClass: "load"
+  }, [_c('mu-circular-progress', {
+    attrs: {
+      "size": 60,
+      "strokeWidth": 5,
+      "color": "plum"
+    }
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "poster"
+  }, [_c('img', {
+    attrs: {
+      "src": _vm.film.images.large
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "info"
+  }, [_c('h2', {
+    domProps: {
+      "textContent": _vm._s(_vm.film.title)
+    }
+  }), _vm._v(" "), _c('p', [_c('span', {
+    domProps: {
+      "textContent": _vm._s(_vm.film.year + " / ")
+    }
+  }), _vm._v(" "), _vm._l((_vm.film.genres), function(key) {
+    return _c('span', {
+      domProps: {
+        "textContent": _vm._s(key + " / ")
+      }
+    })
+  })], 2), _vm._v(" "), _c('p', [_c('span', [_vm._v("原名：")]), _c('span', {
+    domProps: {
+      "textContent": _vm._s(_vm.film.original_title)
+    }
+  })]), _vm._v(" "), _c('p', [_c('span', [_vm._v("上映时间：")]), _c('span', {
+    domProps: {
+      "textContent": _vm._s(_vm.film.mainland_pubdate)
+    }
+  })]), _vm._v(" "), _c('p', [_c('span', [_vm._v("片长：")]), _c('span', {
+    domProps: {
+      "textContent": _vm._s(_vm.film.durations[0])
+    }
+  })]), _vm._v(" "), _c('p', [_vm._v("简介")]), _vm._v(" "), _c('a', {
+    staticClass: "text",
+    attrs: {
+      "href": _vm.film.alt
+    },
+    domProps: {
+      "textContent": _vm._s(_vm.film.summary)
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "rating"
+  }, [_c('span', [_vm._v("豆瓣评分")]), _vm._v(" "), _c('h2', {
+    domProps: {
+      "textContent": _vm._s(_vm.film.rating.average)
+    }
+  }), _vm._v(" "), _c('span', [_vm._v("多少人想看")]), _vm._v(" "), _c('p', {
+    domProps: {
+      "textContent": _vm._s(_vm.film.wish_count)
+    }
+  })])]), _vm._v(" "), _c('div', [_c('div', {
+    staticClass: "center"
+  }, [_c('a', {
+    attrs: {
+      "href": '#/intro/' + _vm.film.id + '/comments'
+    }
+  }, [_vm._v("短评")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": '#/intro/' + _vm.film.id + '/reviews'
+    }
+  }, [_vm._v("影评")])]), _vm._v(" "), _c('router-view')], 1)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-a0fed8f0", module.exports)
+  }
+}
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('footer', [_c('mu-paper', [_c('mu-bottom-nav', {
+    attrs: {
+      "value": _vm.bottomNav
+    },
+    on: {
+      "change": _vm.handleChange
+    }
+  }, [_c('mu-bottom-nav-item', {
+    attrs: {
+      "value": "hots",
+      "title": "热映",
+      "href": "/#/hots",
+      "icon": "event seat"
+    }
+  }), _vm._v(" "), _c('mu-bottom-nav-item', {
+    attrs: {
+      "value": "find",
+      "title": "找片",
+      "href": "/#/find",
+      "icon": "visibility"
+    }
+  }), _vm._v(" "), _c('mu-bottom-nav-item', {
+    attrs: {
+      "value": "user",
+      "title": "我的",
+      "href": "/#/user",
+      "icon": "face"
+    }
+  })], 1)], 1)], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23870,26 +24803,99 @@ if (false) {
 }
 
 /***/ }),
-/* 24 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', [_vm._v("第一个组件")])
-},staticRenderFns: []}
+  return _c('div', [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('main', [_c('router-view')], 1), _vm._v(" "), _c('footer', [_c('mu-paper', [_c('mu-bottom-nav', {
+    attrs: {
+      "value": _vm.bottomNav
+    },
+    on: {
+      "change": _vm.handleChange
+    }
+  }, [_c('mu-bottom-nav-item', {
+    attrs: {
+      "value": "hots",
+      "title": "热映",
+      "href": "/#/hots",
+      "icon": "event seat"
+    }
+  }), _vm._v(" "), _c('mu-bottom-nav-item', {
+    attrs: {
+      "value": "find",
+      "title": "找片",
+      "href": "/#/find",
+      "icon": "visibility"
+    }
+  }), _vm._v(" "), _c('mu-bottom-nav-item', {
+    attrs: {
+      "value": "user",
+      "title": "我的",
+      "href": "/#/user",
+      "icon": "face"
+    }
+  })], 1)], 1)], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('header', [_c('span', [_vm._v("广州")]), _vm._v(" "), _c('input', {
+    attrs: {
+      "type": "text",
+      "placeholder": "电影/电视剧/影人"
+    }
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('nav', [_c('a', {
+    attrs: {
+      "href": "#/hots/played"
+    }
+  }, [_vm._v("正在热映")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "#/hots/prevue"
+    }
+  }, [_vm._v("即将上映")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-cc058c2e", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-ad54b74c", module.exports)
   }
 }
 
 /***/ }),
-/* 25 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div')
+  return _c('div', [_c('footer', [_c('mu-paper', [_c('mu-bottom-nav', {
+    attrs: {
+      "value": _vm.bottomNav
+    },
+    on: {
+      "change": _vm.handleChange
+    }
+  }, [_c('mu-bottom-nav-item', {
+    attrs: {
+      "value": "hots",
+      "title": "热映",
+      "href": "/#/hots",
+      "icon": "event seat"
+    }
+  }), _vm._v(" "), _c('mu-bottom-nav-item', {
+    attrs: {
+      "value": "find",
+      "title": "找片",
+      "href": "/#/find",
+      "icon": "visibility"
+    }
+  }), _vm._v(" "), _c('mu-bottom-nav-item', {
+    attrs: {
+      "value": "user",
+      "title": "我的",
+      "href": "/#/user",
+      "icon": "face"
+    }
+  })], 1)], 1)], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -23900,13 +24906,143 @@ if (false) {
 }
 
 /***/ }),
-/* 26 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(18);
+var content = __webpack_require__(28);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("c96cfb82", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0a306917\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./prevue.vue", function() {
+     var newContent = require("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0a306917\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./prevue.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(29);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("a6ea5a8a", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e18e788\",\"scoped\":true,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./comments.vue", function() {
+     var newContent = require("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e18e788\",\"scoped\":true,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./comments.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(30);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("c84906f0", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6406a0b7\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./reviews.vue", function() {
+     var newContent = require("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6406a0b7\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./reviews.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(31);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("4cf6e9d4", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-74682be7\",\"scoped\":true,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./played.vue", function() {
+     var newContent = require("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-74682be7\",\"scoped\":true,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./played.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(32);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("601550d4", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a0fed8f0\",\"scoped\":true,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./intro.vue", function() {
+     var newContent = require("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a0fed8f0\",\"scoped\":true,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./intro.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(33);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23926,23 +25062,23 @@ if(false) {
 }
 
 /***/ }),
-/* 27 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(19);
+var content = __webpack_require__(34);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("003fc2d1", content, false);
+var update = __webpack_require__(2)("664bc3ad", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-cc058c2e\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./hot.vue", function() {
-     var newContent = require("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-cc058c2e\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./hot.vue");
+   module.hot.accept("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ad54b74c\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./hots.vue", function() {
+     var newContent = require("!!../node_modules/._css-loader@0.28.1@css-loader/index.js?sourceMap!../node_modules/._vue-loader@12.1.0@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ad54b74c\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/._vue-loader@12.1.0@vue-loader/lib/selector.js?type=styles&index=0!./hots.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -23952,13 +25088,13 @@ if(false) {
 }
 
 /***/ }),
-/* 28 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(20);
+var content = __webpack_require__(35);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23978,7 +25114,7 @@ if(false) {
 }
 
 /***/ }),
-/* 29 */
+/* 54 */
 /***/ (function(module, exports) {
 
 /**

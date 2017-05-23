@@ -3,28 +3,35 @@
 		<div v-show='load' class="load">
 		  	<mu-circular-progress :size="60" :strokeWidth="5" color="plum"/>
 		</div>
-		<div class="post"><img :src="data.images.large" alt="" /></div>
-		<div class="info">
-			<h2 v-text='data.title'></h2>
-			<p>
-				<span v-text='data.year+" / "'></span>
-				<span v-for='key in data.genres' v-text='key+" / "'></span>
-			</p>
-			<p><span>原名：</span><span v-text='data.original_title'></span></p>
-			<p><span>上映时间：</span><span v-text='data.mainland_pubdate'></span></p>
-			<p><span>片长：</span><span v-text='data.durations[0]'></span></p>
+		<div class="poster"><img :src="film.images.large"/></div>
+		<div class="message">
+			<div class="info">
+				<h2 v-text='film.title'></h2>
+				<p>
+					<span v-text='film.year+" / "'></span>
+					<span v-for='key in film.genres' v-text='key+" / "'></span>
+				</p>
+				<p><span>原名：</span><span v-text='film.original_title'></span></p>
+				<p><span>上映时间：</span><span v-text='film.mainland_pubdate'></span></p>
+				<p><span>片长：</span><span v-text='film.durations[0]'></span></p>
+			</div>
+			<div class="intro">
+				<p>简介</p>
+				<a v-html="film.summary" :href="film.alt" class="flow color"></a>
+				<span @click="flow" class="all">展开</span>
+			</div>
 			<div class="rating">
 				<span>豆瓣评分</span>
-				<h2 v-text='data.rating.average'></h2>
+				<h2 v-text='film.rating.average'></h2>
 				<span>多少人想看</span>
-				<p v-text='data.wish_count'></p>
+				<p v-text='film.wish_count'></p>
 			</div>
-			<p>简介</p>
-			<p v-text='data.summary'></p>
 		</div>
-		<div class="comment">
-			<a :href="'#/intro/'+data.id+'/comments'">短评</a>
-			<a :href="'#/intro/'+data.id+'/reviews'">影评</a>
+		<div>
+			<div class="center">
+				<a :href="'#/intro/'+film.id+'/comments'">短评</a>
+				<a :href="'#/intro/'+film.id+'/reviews'">影评</a>
+			</div>
 			<router-view></router-view>
 		</div>
 	</div>
@@ -34,12 +41,31 @@
 	export default {
 		data() {
 			return {
-				data: {},
+				film: {
+					images:{
+						large:'',
+					},
+					alt:'',
+					title:'',
+					year:'',
+					genres:'',
+					original_title:'',
+					mainland_pubdate:'',
+					durations:'',
+					rating:{
+						average:''
+					},
+					wish_count:'',
+					summary:'',
+					id:'',
+				},
 				load: true,
+				flow:false,
 			}
 		},
 		mounted() {
-			var src = window.location.hash.slice(8)
+			var src = window.location.hash.substr(8,8)
+			console.log(src)
 			$.ajax({
 				type: 'get',
 				url: 'http://api.douban.com/v2/movie/subject/' + src,
@@ -49,11 +75,11 @@
 				dataType: 'jsonp',
 				success: function(data) {
 					console.log(data)
-					this.data = data
-					//this.load = false
+					this.film = data
+					this.load = false
 				}.bind(this)
 			})
-
+			//$('.all').click($('.flow').removeClass())
 		}
 	}
 </script>
@@ -68,16 +94,46 @@
 		left: 50%;
 		margin: -30px 0 0 -30px;
 	}	
-	.post {
+	.poster {
+		display: block;
 		padding: 20px;
 		text-align: center;
 	}
-	.post img {
+	.poster img {
 		width: 150px;
 	}
-	.info {
+	.message {
 		padding: 20px;
 		position: relative;
+	}
+	.info{
+		width: 60%;
+	}
+	.color{
+		color: #000;
+	}
+	.flow{
+		overflow: hidden;  
+    	text-overflow: ellipsis;  
+    	display: -webkit-box;  
+   		-webkit-line-clamp: 5;  
+    	-webkit-box-orient: vertical;
+    	position: relative; 
+	}
+	.flow::after{
+	  content:'...';
+	  position: absolute;
+	  right: 0;
+	  bottom: 0;
+	  width: 38px;
+	  height: 21px;
+	  background-color: #fff;
+	}
+	.all{
+		position: absolute;
+		bottom: 18px;
+		right: 24px;
+		color: #40ff85;
 	}
 	.rating {
 		position: absolute;
@@ -88,11 +144,13 @@
 		text-align: center;
 		background: #eee;
 	}
-	.comment a{
+	.center{
+		background: #eee;
+	}
+	.center a{
 		display: inline-block;
 		width: 49.5%;
 		text-align: center;
 		line-height: 50px;
-		background: #eee;
 	}
 </style>
