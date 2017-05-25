@@ -54,20 +54,16 @@
 	}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 	.reviews{
 		padding: 20px;
+		.detail{
+			padding-bottom: 10px;
+			display: block;
+			color: #000;
+		}
 	}
-	.load {
-		position: absolute;
-		left: 50%;
-		margin-left:-30px;
-	}
-	.detail{
-		padding-bottom: 10px;
-		display: block;
-		color: #000;
-	}
+
 	.showmore{
 		text-align: center;
 		line-height: 60px;

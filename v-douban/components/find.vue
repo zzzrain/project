@@ -1,5 +1,6 @@
 <template>
-	<div>
+	<div class="content">
+		<h2>up主很懒，什么都没有。。。</h2>
 		<footer>
 			<mu-paper>
 				<mu-bottom-nav :value="bottomNav" @change="handleChange">
@@ -27,7 +28,13 @@
 	}
 </script>
 
-<style>
+<style scoped lang="scss">
+	.content{
+		padding: 20px;
+	}
+	h2{
+		color: #40ff85;
+	}
 	footer {
 		position: fixed;
 		bottom: 0px;

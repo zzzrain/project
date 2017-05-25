@@ -54,45 +54,42 @@
 	}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 	.comments{
 		padding: 20px;
 		overflow: hidden;
 	}
-	.load {
-		position: absolute;
-		left: 50%;
-		margin-left: -30px;
-	}
+
 	.info{
-		overflow: hidden;
 		border-bottom: 1px solid #eee;
 		margin-bottom: 10px;
-	}
-	.user{
-		display: block;
-		float: left;
-	}
-	.user img{
-		border-radius: 50%;
-	}
-	.text{
-		float: left;
 		overflow: hidden;
-		width: 80%;
-		margin-left: 10px;
+		.user{
+			display: block;
+			float: left;
+			img{
+				border-radius: 50%;
+			}
+		}
+		.text{
+			float: left;
+			width: 80%;
+			margin-left: 10px;
+			overflow: hidden;
+			p{
+				float: left;
+			}
+			.count{
+				float: right;
+			}
+			.icon{
+				float: right;
+				line-height: 100%;
+				margin: 8px 0 0 5px;
+			}
+		}
 	}
-	.text p{
-		float: left;
-	}
-	.text .count{
-		float: right;
-	}
-	.text .icon{
-		float: right;
-		line-height: 100%;
-		margin: 8px 0 0 5px;
-	}
+	
 	.showmore{
 		text-align: center;
 		line-height: 60px;

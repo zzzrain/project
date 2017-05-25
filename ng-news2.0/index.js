@@ -1,8 +1,8 @@
 // 模块化
-angular.module('demo', ['ui.router', 'state', 'controller', 'directive']);
+angular.module('demo', ['ui.router', 'router', 'controller', 'directive']);
 // router
 ;(function() {
-	angular.module('state', [])
+	angular.module('router', [])
 		.config(function($stateProvider, $urlRouterProvider) {
 			console.log('ok')
 			$stateProvider
@@ -56,7 +56,7 @@ angular.module('demo', ['ui.router', 'state', 'controller', 'directive']);
 		})
 		.controller('main',function($scope,$http){
 			// search
-			$scope.show = false
+			$scope.show = true
 			$scope.search = function(){
 				$scope.show = true
 			}

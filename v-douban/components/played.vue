@@ -4,9 +4,9 @@
 		  	<mu-circular-progress :size="60" :strokeWidth="5" color="plum"/>
 		</div>
 		<div class="movielist">
-			<a v-for='key in movie' :href="'#/intro/'+key.id" class="movie">
-				<div><img :src="key.images.medium"/></div>
-				<div class="intro">
+			<a v-for='key in movie' :href="'#/detail/'+key.id" class="movie">
+				<div class="face"><img :src="key.images.medium"/></div>
+				<div class="info">
 					<h3 v-text='key.title'></h3>
 					<p><span>评分：</span><span v-text='key.rating.average'></span></p>
 					<p><span>导演：</span><span v-text='key.directors[0].name'></span></p>
@@ -32,7 +32,7 @@
 				load:true,
 				city:'广州',
 				start:0,
-				count:8,
+				count:10,
 			}
 		},
 		mounted() {
@@ -53,7 +53,7 @@
 					success: function(data) {
 						console.log(data.subjects)
 						this.movie = this.movie.concat(data.subjects)
-						this.start += 8
+						this.start += 10
 						this.bool = true
 						this.load = false
 					}.bind(this)
@@ -63,7 +63,7 @@
 	}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 	.load {
 		position: fixed;
 		top: 50%;
@@ -74,22 +74,25 @@
 	.movie {
 		display: block;
 		width: 100%;
-		padding: 15px 10px;
+		height: 250px;
+		padding: 20px;
 		text-align: left;
 		border-bottom: 1px solid #ddd;
 		color: #000;
-		overflow: hidden;
+		.face{
+			position: relative;
+			top: 10px;
+			left: 10px;
+			width: 30%;
+		}
+		.info{
+			position: relative;
+			top:-150px;
+			left: 130px;
+			width: 60%;
+		}
 	}
 	
-	.movie>div {
-		float: left;
-		margin: 0 10px;
-		line-height: 100%;
-	}
-	
-	.movie .intro {
-		width: 60%;
-	}
 	.showmore{
 		text-align: center;
 		line-height: 60px;
@@ -97,6 +100,7 @@
 		font-size: 1.5em;
 		font-family: "微软雅黑";
 	}
+	
 	.bottom{
 		width: 100%;
 		height: 56px;
