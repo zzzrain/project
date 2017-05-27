@@ -1,0 +1,19 @@
+<div class="played">
+	<div class="movielist">
+		<a ng-repeat='key in movie' ng-href="#/detail/{{key.id}}" class="movie">
+			<div class="face"><img ng-src="{{key.images.medium}}"/></div>
+			<div class="info">
+				<h3 ng-bind='key.title'></h3>
+				<p><span>评分：</span><span ng-bind='key.rating.average'></span></p>
+				<p><span>导演：</span><span ng-bind='key.directors[0].name'></span></p>
+				<p class="casts">
+					<span>主演：</span>
+					<span ng-repeat='arr in key.casts' ng-bind='arr.name+" / "'></span>
+				</p>
+				<p><span ng-bind='key.collect_count'></span><span>人看过</span></p>
+			</div>
+		</a>
+	</div>
+	<div class="showmore" ng-click="showmore()" ng-show='bool'>查看更多</div>
+	<div class="bottom"></div>
+</div>

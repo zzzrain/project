@@ -24002,12 +24002,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_find_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_find_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_user_vue__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_user_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_user_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_detail_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_detail_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_detail_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_played_vue__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_played_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_played_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_prevue_vue__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_prevue_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_prevue_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_played_vue__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_played_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_played_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_prevue_vue__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_prevue_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_prevue_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_detail_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_detail_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_detail_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_comments_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_comments_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_comments_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_reviews_vue__ = __webpack_require__(18);
@@ -24042,14 +24042,14 @@ window.$ = __WEBPACK_IMPORTED_MODULE_5_jquery___default.a;
 
 
 
-// 详情页
-
-
 // 第二层
 
 
 
-// 第三层
+// 详情页
+
+
+// 评论页
 
 
 
@@ -24065,11 +24065,11 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 		children: [{
 			// 热影片
 			path: "played",
-			component: __WEBPACK_IMPORTED_MODULE_10__components_played_vue___default.a
+			component: __WEBPACK_IMPORTED_MODULE_9__components_played_vue___default.a
 		}, {
 			// 预影片
 			path: "prevue",
-			component: __WEBPACK_IMPORTED_MODULE_11__components_prevue_vue___default.a
+			component: __WEBPACK_IMPORTED_MODULE_10__components_prevue_vue___default.a
 		}, {
 			path: "/",
 			redirect: "/hots/played"
@@ -24077,7 +24077,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 	}, {
 		// 详细介绍
 		path: "/detail/:id",
-		component: __WEBPACK_IMPORTED_MODULE_9__components_detail_vue___default.a,
+		component: __WEBPACK_IMPORTED_MODULE_11__components_detail_vue___default.a,
 		children: [{
 			// 短评
 			path: "comments",
@@ -24271,11 +24271,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			if (item[0] === 'username') this.username = item[1];
 		}.bind(this));
 
-		// 获取时间
-		this.timer();
-
 		// 网上数据
-		var src = window.location.hash.substr(8, 9);
+		var src = window.location.hash.substr(8).replace(/\/comments/, '');
 		console.log(src);
 		$.ajax({
 			type: 'get',
@@ -24290,11 +24287,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				this.load = false;
 			}.bind(this)
 		});
+
+		this.timer();
 	},
 	methods: {
+		// 展开功能
 		show() {
 			$('.color').removeClass().addClass('color').siblings('.show').hide();
 		},
+		// 刷新时间
 		timer() {
 			setInterval(function () {
 				var date = new Date().toLocaleDateString().replace(/\//gi, '-');
@@ -24302,22 +24303,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				this.now = date + ' ' + time;
 			}.bind(this), 1000);
 		},
-		// 本地数据
+		// 模拟数据
 		send() {
 			$.get('http://localhost/project/v-douban/php/comments.php', { username: this.username, text: this.text, now: this.now }, function (data) {
-				if (data) {
-					data = JSON.parse(data);
-					$('.local').append(`
-							<div class="info">
-								<a class="user"><img src="" alt="" /></a>
-								<div class="text">
-									<p>${data.username}</p>
-									<p>${data.text}</p>
-									<p>${data.now}</p>
-								</div>
+				data = JSON.parse(data);
+				console.log(data);
+				$('.local').html(data.map(item => {
+					return `
+						<div class="info">
+							<a class="user"><img src="" alt="" /></a>
+							<div class="text">
+								<p>${item.username}</p>
+								<p>${item.text}</p>
+								<p>${item.now}</p>
 							</div>
-						`);
-				}
+						</div>`;
+				}).reverse().join(''));
 			}.bind(this));
 		}
 	}
@@ -24445,8 +24446,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    	}.bind(this)
    })*/
 			$.post('http://localhost/project/v-douban/php/login.php', { username: this.username, password: this.password }, function (data) {
+				console.log(data);
 				if (data) {
-					console.log(data);
 					var now = new Date();
 					now.setDate(now.getDate() + 3);
 					document.cookie = 'username=' + data + ';expires=' + now + ';path=/';
@@ -24703,12 +24704,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data() {
 		return {
 			bottomNav: 'user',
-			activeTab: '收藏'
+			activeTab: '收藏',
+			bool: false,
+			imgUrl: '',
+			username: ''
 		};
 	},
 	mounted() {
@@ -24716,8 +24724,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		console.log(cookie);
 		cookie.map(function (item) {
 			item = item.split('=');
-			if (item[0] === 'username') $('.login a').text(item[1]);
-		});
+			if (item[0] === 'username') {
+				$('.login a').text(item[1]);
+				this.username = item[1];
+			}
+		}.bind(this));
 	},
 	methods: {
 		handleChange(val) {
@@ -24731,6 +24742,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var now = new Date();
 			now.setDate(now.getDate() - 1);
 			document.cookie = 'username=xxx;expires=' + now + ';path=/';
+		},
+		commit() {
+			console.log($('.file input')[0].files[0]);
+			var imgUrl = window.URL.createObjectURL($('.file input')[0].files[0]);
+			console.log(imgUrl);
+			this.imgUrl = imgUrl;
+		},
+		ok() {
+			$.post('http://localhost/project/v-douban/php/user.php', { username: this.username, imgUrl: this.imgUrl }, function (data) {
+				console.log(data);
+			}.bind(this));
 		}
 	}
 });
@@ -24870,7 +24892,7 @@ exports = module.exports = __webpack_require__(0)(true);
 
 
 // module
-exports.push([module.i, "\nh2[data-v-8b068b36], p[data-v-8b068b36] {\n  margin: 0;\n}\n.load[data-v-8b068b36] {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  margin: -30px 0 0 -30px;\n}\n.poster[data-v-8b068b36] {\n  display: block;\n  padding: 20px;\n  text-align: center;\n}\n.poster img[data-v-8b068b36] {\n    width: 150px;\n}\n.message[data-v-8b068b36] {\n  padding: 20px;\n  position: relative;\n}\n.message .info[data-v-8b068b36] {\n    width: 60%;\n}\n.message .intro .show[data-v-8b068b36] {\n    position: absolute;\n    bottom: 18px;\n    right: 24px;\n    color: #40ff85;\n}\n.message .intro .color[data-v-8b068b36] {\n    color: #000;\n}\n.message .intro .flow[data-v-8b068b36] {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    display: -webkit-box;\n    -webkit-line-clamp: 3;\n    -webkit-box-orient: vertical;\n    position: relative;\n}\n.message .intro .flow[data-v-8b068b36]::after {\n      content: '...';\n      position: absolute;\n      right: 0;\n      bottom: 0;\n      width: 38px;\n      height: 21px;\n      background-color: #fff;\n}\n.message .rating[data-v-8b068b36] {\n    position: absolute;\n    top: 25px;\n    right: 35px;\n    width: 100px;\n    padding: 10px 0;\n    text-align: center;\n    background: #eee;\n}\n.center[data-v-8b068b36] {\n  background: #eee;\n}\n.center a[data-v-8b068b36] {\n    display: inline-block;\n    width: 49.5%;\n    text-align: center;\n    line-height: 50px;\n}\n.issue[data-v-8b068b36] {\n  margin: 10px 0;\n  padding: 10px 20px;\n  border-bottom: 1px solid #40ff85;\n}\n.issue .write[data-v-8b068b36] {\n    text-align: center;\n    line-height: 24px;\n    color: #40ff85;\n    width: 25%;\n    margin-left: 10%;\n}\n.issue textarea[data-v-8b068b36] {\n    margin: 0 10%;\n}\n.issue .send[data-v-8b068b36] {\n    width: 16%;\n    margin-left: 76%;\n    text-align: center;\n    line-height: 25px;\n    background: #40ff85;\n    color: #fff;\n}\n.local[data-v-8b068b36] {\n  padding: 20px;\n}\n.local .info[data-v-8b068b36] {\n    border-bottom: 1px solid #eee;\n    margin-bottom: 10px;\n    overflow: hidden;\n}\n.local .info .user[data-v-8b068b36] {\n      display: block;\n      float: left;\n}\n.local .info .user img[data-v-8b068b36] {\n        border-radius: 50%;\n}\n.local .info .text[data-v-8b068b36] {\n      float: left;\n      width: 80%;\n      margin-left: 10px;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/detail.vue"],"names":[],"mappings":";AAAA;EACE,UAAU;CAAE;AAEd;EACE,gBAAgB;EAChB,SAAS;EACT,UAAU;EACV,wBAAwB;CAAE;AAE5B;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;CAAE;AACrB;IACE,aAAa;CAAE;AAEnB;EACE,cAAc;EACd,mBAAmB;CAAE;AACrB;IACE,WAAW;CAAE;AACf;IACE,mBAAmB;IACnB,aAAa;IACb,YAAY;IACZ,eAAe;CAAE;AACnB;IACE,YAAY;CAAE;AAChB;IACE,iBAAiB;IACjB,wBAAwB;IACxB,qBAAqB;IACrB,sBAAsB;IACtB,6BAA6B;IAC7B,mBAAmB;CAAE;AACrB;MACE,eAAe;MACf,mBAAmB;MACnB,SAAS;MACT,UAAU;MACV,YAAY;MACZ,aAAa;MACb,uBAAuB;CAAE;AAC7B;IACE,mBAAmB;IACnB,UAAU;IACV,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,mBAAmB;IACnB,iBAAiB;CAAE;AAEvB;EACE,iBAAiB;CAAE;AACnB;IACE,sBAAsB;IACtB,aAAa;IACb,mBAAmB;IACnB,kBAAkB;CAAE;AAExB;EACE,eAAe;EACf,mBAAmB;EACnB,iCAAiC;CAAE;AACnC;IACE,mBAAmB;IACnB,kBAAkB;IAClB,eAAe;IACf,WAAW;IACX,iBAAiB;CAAE;AACrB;IACE,cAAc;CAAE;AAClB;IACE,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,oBAAoB;IACpB,YAAY;CAAE;AAElB;EACE,cAAc;CAAE;AAChB;IACE,8BAA8B;IAC9B,oBAAoB;IACpB,iBAAiB;CAAE;AACnB;MACE,eAAe;MACf,YAAY;CAAE;AACd;QACE,mBAAmB;CAAE;AACzB;MACE,YAAY;MACZ,WAAW;MACX,kBAAkB;CAAE","file":"detail.vue","sourcesContent":["h2, p {\n  margin: 0; }\n\n.load {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  margin: -30px 0 0 -30px; }\n\n.poster {\n  display: block;\n  padding: 20px;\n  text-align: center; }\n  .poster img {\n    width: 150px; }\n\n.message {\n  padding: 20px;\n  position: relative; }\n  .message .info {\n    width: 60%; }\n  .message .intro .show {\n    position: absolute;\n    bottom: 18px;\n    right: 24px;\n    color: #40ff85; }\n  .message .intro .color {\n    color: #000; }\n  .message .intro .flow {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    display: -webkit-box;\n    -webkit-line-clamp: 3;\n    -webkit-box-orient: vertical;\n    position: relative; }\n    .message .intro .flow::after {\n      content: '...';\n      position: absolute;\n      right: 0;\n      bottom: 0;\n      width: 38px;\n      height: 21px;\n      background-color: #fff; }\n  .message .rating {\n    position: absolute;\n    top: 25px;\n    right: 35px;\n    width: 100px;\n    padding: 10px 0;\n    text-align: center;\n    background: #eee; }\n\n.center {\n  background: #eee; }\n  .center a {\n    display: inline-block;\n    width: 49.5%;\n    text-align: center;\n    line-height: 50px; }\n\n.issue {\n  margin: 10px 0;\n  padding: 10px 20px;\n  border-bottom: 1px solid #40ff85; }\n  .issue .write {\n    text-align: center;\n    line-height: 24px;\n    color: #40ff85;\n    width: 25%;\n    margin-left: 10%; }\n  .issue textarea {\n    margin: 0 10%; }\n  .issue .send {\n    width: 16%;\n    margin-left: 76%;\n    text-align: center;\n    line-height: 25px;\n    background: #40ff85;\n    color: #fff; }\n\n.local {\n  padding: 20px; }\n  .local .info {\n    border-bottom: 1px solid #eee;\n    margin-bottom: 10px;\n    overflow: hidden; }\n    .local .info .user {\n      display: block;\n      float: left; }\n      .local .info .user img {\n        border-radius: 50%; }\n    .local .info .text {\n      float: left;\n      width: 80%;\n      margin-left: 10px; }\n"],"sourceRoot":""}]);
+exports.push([module.i, "\nh2[data-v-8b068b36], p[data-v-8b068b36] {\n  margin: 0;\n}\n.load[data-v-8b068b36] {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  margin: -30px 0 0 -30px;\n}\n.poster[data-v-8b068b36] {\n  display: block;\n  padding: 20px;\n  text-align: center;\n}\n.poster img[data-v-8b068b36] {\n    width: 150px;\n}\n.message[data-v-8b068b36] {\n  padding: 20px;\n  position: relative;\n}\n.message .info[data-v-8b068b36] {\n    width: 60%;\n}\n.message .intro .show[data-v-8b068b36] {\n    position: absolute;\n    bottom: 18px;\n    right: 24px;\n    color: #40ff85;\n}\n.message .intro .color[data-v-8b068b36] {\n    color: #000;\n}\n.message .intro .flow[data-v-8b068b36] {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    display: -webkit-box;\n    -webkit-line-clamp: 3;\n    -webkit-box-orient: vertical;\n    position: relative;\n}\n.message .intro .flow[data-v-8b068b36]::after {\n      content: '...';\n      position: absolute;\n      right: 0;\n      bottom: 0;\n      width: 38px;\n      height: 21px;\n      background-color: #fff;\n}\n.message .rating[data-v-8b068b36] {\n    position: absolute;\n    top: 25px;\n    right: 35px;\n    width: 100px;\n    padding: 10px 0;\n    text-align: center;\n    background: #eee;\n}\n.center[data-v-8b068b36] {\n  background: #eee;\n}\n.center a[data-v-8b068b36] {\n    display: inline-block;\n    width: 49.5%;\n    text-align: center;\n    line-height: 50px;\n}\n.issue[data-v-8b068b36] {\n  margin: 10px 0;\n  padding: 10px 20px;\n  border-bottom: 1px solid #40ff85;\n}\n.issue .write[data-v-8b068b36] {\n    text-align: center;\n    line-height: 24px;\n    color: #40ff85;\n    width: 25%;\n    margin-left: 10%;\n}\n.issue textarea[data-v-8b068b36] {\n    margin: 0 10%;\n}\n.issue .send[data-v-8b068b36] {\n    width: 16%;\n    margin-left: 76%;\n    text-align: center;\n    line-height: 25px;\n    background: #40ff85;\n    color: #fff;\n}\n.local[data-v-8b068b36] {\n  margin: 20px;\n}\n.local .info[data-v-8b068b36] {\n    border-bottom: 1px solid #eee;\n    margin-bottom: 10px;\n}\n.local .info .user[data-v-8b068b36] {\n      position: absolute;\n}\n.local .info .user img[data-v-8b068b36] {\n        border-radius: 50%;\n}\n.local .info .text[data-v-8b068b36] {\n      position: absolute;\n      left: 20%;\n      width: 80%;\n      margin-left: 10px;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/detail.vue"],"names":[],"mappings":";AAAA;EACE,UAAU;CAAE;AAEd;EACE,gBAAgB;EAChB,SAAS;EACT,UAAU;EACV,wBAAwB;CAAE;AAE5B;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;CAAE;AACrB;IACE,aAAa;CAAE;AAEnB;EACE,cAAc;EACd,mBAAmB;CAAE;AACrB;IACE,WAAW;CAAE;AACf;IACE,mBAAmB;IACnB,aAAa;IACb,YAAY;IACZ,eAAe;CAAE;AACnB;IACE,YAAY;CAAE;AAChB;IACE,iBAAiB;IACjB,wBAAwB;IACxB,qBAAqB;IACrB,sBAAsB;IACtB,6BAA6B;IAC7B,mBAAmB;CAAE;AACrB;MACE,eAAe;MACf,mBAAmB;MACnB,SAAS;MACT,UAAU;MACV,YAAY;MACZ,aAAa;MACb,uBAAuB;CAAE;AAC7B;IACE,mBAAmB;IACnB,UAAU;IACV,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,mBAAmB;IACnB,iBAAiB;CAAE;AAEvB;EACE,iBAAiB;CAAE;AACnB;IACE,sBAAsB;IACtB,aAAa;IACb,mBAAmB;IACnB,kBAAkB;CAAE;AAExB;EACE,eAAe;EACf,mBAAmB;EACnB,iCAAiC;CAAE;AACnC;IACE,mBAAmB;IACnB,kBAAkB;IAClB,eAAe;IACf,WAAW;IACX,iBAAiB;CAAE;AACrB;IACE,cAAc;CAAE;AAClB;IACE,WAAW;IACX,iBAAiB;IACjB,mBAAmB;IACnB,kBAAkB;IAClB,oBAAoB;IACpB,YAAY;CAAE;AAElB;EACE,aAAa;CAAE;AACf;IACE,8BAA8B;IAC9B,oBAAoB;CAAE;AACtB;MACE,mBAAmB;CAAE;AACrB;QACE,mBAAmB;CAAE;AACzB;MACE,mBAAmB;MACnB,UAAU;MACV,WAAW;MACX,kBAAkB;CAAE","file":"detail.vue","sourcesContent":["h2, p {\n  margin: 0; }\n\n.load {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  margin: -30px 0 0 -30px; }\n\n.poster {\n  display: block;\n  padding: 20px;\n  text-align: center; }\n  .poster img {\n    width: 150px; }\n\n.message {\n  padding: 20px;\n  position: relative; }\n  .message .info {\n    width: 60%; }\n  .message .intro .show {\n    position: absolute;\n    bottom: 18px;\n    right: 24px;\n    color: #40ff85; }\n  .message .intro .color {\n    color: #000; }\n  .message .intro .flow {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    display: -webkit-box;\n    -webkit-line-clamp: 3;\n    -webkit-box-orient: vertical;\n    position: relative; }\n    .message .intro .flow::after {\n      content: '...';\n      position: absolute;\n      right: 0;\n      bottom: 0;\n      width: 38px;\n      height: 21px;\n      background-color: #fff; }\n  .message .rating {\n    position: absolute;\n    top: 25px;\n    right: 35px;\n    width: 100px;\n    padding: 10px 0;\n    text-align: center;\n    background: #eee; }\n\n.center {\n  background: #eee; }\n  .center a {\n    display: inline-block;\n    width: 49.5%;\n    text-align: center;\n    line-height: 50px; }\n\n.issue {\n  margin: 10px 0;\n  padding: 10px 20px;\n  border-bottom: 1px solid #40ff85; }\n  .issue .write {\n    text-align: center;\n    line-height: 24px;\n    color: #40ff85;\n    width: 25%;\n    margin-left: 10%; }\n  .issue textarea {\n    margin: 0 10%; }\n  .issue .send {\n    width: 16%;\n    margin-left: 76%;\n    text-align: center;\n    line-height: 25px;\n    background: #40ff85;\n    color: #fff; }\n\n.local {\n  margin: 20px; }\n  .local .info {\n    border-bottom: 1px solid #eee;\n    margin-bottom: 10px; }\n    .local .info .user {\n      position: absolute; }\n      .local .info .user img {\n        border-radius: 50%; }\n    .local .info .text {\n      position: absolute;\n      left: 20%;\n      width: 80%;\n      margin-left: 10px; }\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -24884,7 +24906,7 @@ exports = module.exports = __webpack_require__(0)(true);
 
 
 // module
-exports.push([module.i, "\nheader[data-v-ac91e042] {\n  height: 180px;\n  padding: 20px;\n  background: #40ffb1;\n  position: relative;\n}\nheader .face[data-v-ac91e042] {\n    position: absolute;\n    top: 20%;\n    left: 10%;\n}\nheader .face img[data-v-ac91e042] {\n      display: block;\n      width: 80px;\n      height: 80px;\n      line-height: 100%;\n      border-radius: 50%;\n      background: #ccc;\n}\nheader .login[data-v-ac91e042] {\n    position: absolute;\n    top: 25%;\n    left: 40%;\n}\nheader .login a[data-v-ac91e042] {\n      display: block;\n      color: #fff;\n      font-size: 1.5em;\n}\nheader .logout[data-v-ac91e042] {\n    position: absolute;\n    top: 6%;\n    right: 6%;\n    padding: 5px;\n    color: #e340ff;\n    font-size: 1em;\n}\nfooter[data-v-ac91e042] {\n  position: fixed;\n  bottom: 0px;\n  width: 100%;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/user.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;EACd,cAAc;EACd,oBAAoB;EACpB,mBAAmB;CAAE;AACrB;IACE,mBAAmB;IACnB,SAAS;IACT,UAAU;CAAE;AACZ;MACE,eAAe;MACf,YAAY;MACZ,aAAa;MACb,kBAAkB;MAClB,mBAAmB;MACnB,iBAAiB;CAAE;AACvB;IACE,mBAAmB;IACnB,SAAS;IACT,UAAU;CAAE;AACZ;MACE,eAAe;MACf,YAAY;MACZ,iBAAiB;CAAE;AACvB;IACE,mBAAmB;IACnB,QAAQ;IACR,UAAU;IACV,aAAa;IACb,eAAe;IACf,eAAe;CAAE;AAErB;EACE,gBAAgB;EAChB,YAAY;EACZ,YAAY;CAAE","file":"user.vue","sourcesContent":["header {\n  height: 180px;\n  padding: 20px;\n  background: #40ffb1;\n  position: relative; }\n  header .face {\n    position: absolute;\n    top: 20%;\n    left: 10%; }\n    header .face img {\n      display: block;\n      width: 80px;\n      height: 80px;\n      line-height: 100%;\n      border-radius: 50%;\n      background: #ccc; }\n  header .login {\n    position: absolute;\n    top: 25%;\n    left: 40%; }\n    header .login a {\n      display: block;\n      color: #fff;\n      font-size: 1.5em; }\n  header .logout {\n    position: absolute;\n    top: 6%;\n    right: 6%;\n    padding: 5px;\n    color: #e340ff;\n    font-size: 1em; }\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  width: 100%; }\n"],"sourceRoot":""}]);
+exports.push([module.i, "\nheader[data-v-ac91e042] {\n  height: 180px;\n  padding: 20px;\n  background: #40ffb1;\n  position: relative;\n}\nheader .face[data-v-ac91e042] {\n    position: absolute;\n    top: 20%;\n    left: 10%;\n}\nheader .face img[data-v-ac91e042] {\n      display: block;\n      width: 80px;\n      height: 80px;\n      line-height: 100%;\n      border-radius: 50%;\n      background: #ccc;\n}\nheader .file[data-v-ac91e042] {\n    position: absolute;\n    bottom: 0;\n    margin: 0 5%;\n}\nheader .login[data-v-ac91e042] {\n    position: absolute;\n    top: 25%;\n    left: 40%;\n}\nheader .login a[data-v-ac91e042] {\n      display: block;\n      color: #fff;\n      font-size: 1.5em;\n}\nheader .logout[data-v-ac91e042] {\n    position: absolute;\n    top: 6%;\n    right: 6%;\n    padding: 5px;\n    color: #e340ff;\n    font-size: 1em;\n}\nfooter[data-v-ac91e042] {\n  position: fixed;\n  bottom: 0px;\n  width: 100%;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/user.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;EACd,cAAc;EACd,oBAAoB;EACpB,mBAAmB;CAAE;AACrB;IACE,mBAAmB;IACnB,SAAS;IACT,UAAU;CAAE;AACZ;MACE,eAAe;MACf,YAAY;MACZ,aAAa;MACb,kBAAkB;MAClB,mBAAmB;MACnB,iBAAiB;CAAE;AACvB;IACE,mBAAmB;IACnB,UAAU;IACV,aAAa;CAAE;AACjB;IACE,mBAAmB;IACnB,SAAS;IACT,UAAU;CAAE;AACZ;MACE,eAAe;MACf,YAAY;MACZ,iBAAiB;CAAE;AACvB;IACE,mBAAmB;IACnB,QAAQ;IACR,UAAU;IACV,aAAa;IACb,eAAe;IACf,eAAe;CAAE;AAErB;EACE,gBAAgB;EAChB,YAAY;EACZ,YAAY;CAAE","file":"user.vue","sourcesContent":["header {\n  height: 180px;\n  padding: 20px;\n  background: #40ffb1;\n  position: relative; }\n  header .face {\n    position: absolute;\n    top: 20%;\n    left: 10%; }\n    header .face img {\n      display: block;\n      width: 80px;\n      height: 80px;\n      line-height: 100%;\n      border-radius: 50%;\n      background: #ccc; }\n  header .file {\n    position: absolute;\n    bottom: 0;\n    margin: 0 5%; }\n  header .login {\n    position: absolute;\n    top: 25%;\n    left: 40%; }\n    header .login a {\n      display: block;\n      color: #fff;\n      font-size: 1.5em; }\n  header .logout {\n    position: absolute;\n    top: 6%;\n    right: 6%;\n    padding: 5px;\n    color: #e340ff;\n    font-size: 1em; }\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  width: 100%; }\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -24898,7 +24920,7 @@ exports = module.exports = __webpack_require__(0)(true);
 
 
 // module
-exports.push([module.i, "\nheader[data-v-ad54b74c] {\n  padding: 5px 5px;\n  line-height: 30px;\n  background: #40ffb1;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n}\nheader span[data-v-ad54b74c] {\n    display: inline-block;\n    width: 15%;\n    text-align: center;\n    color: #fff;\n}\nheader input[data-v-ad54b74c] {\n    width: 80%;\n    border-radius: 5px;\n    padding: 1px 5px;\n    background: #eee;\n}\nnav[data-v-ad54b74c] {\n  background: #fff;\n  position: fixed;\n  top: 46px;\n  left: 0;\n  right: 0;\n  border-bottom: 1px solid #ddd;\n}\nnav a[data-v-ad54b74c] {\n    display: inline-block;\n    width: 49.5%;\n    text-align: center;\n    line-height: 50px;\n}\nmain[data-v-ad54b74c] {\n  position: absolute;\n  bottom: 60px;\n  z-index: -1;\n}\nfooter[data-v-ad54b74c] {\n  position: fixed;\n  bottom: 0px;\n  width: 100%;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/hots.vue"],"names":[],"mappings":";AAAA;EACE,iBAAiB;EACjB,kBAAkB;EAClB,oBAAoB;EACpB,gBAAgB;EAChB,SAAS;EACT,UAAU;EACV,WAAW;CAAE;AACb;IACE,sBAAsB;IACtB,WAAW;IACX,mBAAmB;IACnB,YAAY;CAAE;AAChB;IACE,WAAW;IACX,mBAAmB;IACnB,iBAAiB;IACjB,iBAAiB;CAAE;AAEvB;EACE,iBAAiB;EACjB,gBAAgB;EAChB,UAAU;EACV,QAAQ;EACR,SAAS;EACT,8BAA8B;CAAE;AAChC;IACE,sBAAsB;IACtB,aAAa;IACb,mBAAmB;IACnB,kBAAkB;CAAE;AAExB;EACE,mBAAmB;EACnB,aAAa;EACb,YAAY;CAAE;AAEhB;EACE,gBAAgB;EAChB,YAAY;EACZ,YAAY;CAAE","file":"hots.vue","sourcesContent":["header {\n  padding: 5px 5px;\n  line-height: 30px;\n  background: #40ffb1;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px; }\n  header span {\n    display: inline-block;\n    width: 15%;\n    text-align: center;\n    color: #fff; }\n  header input {\n    width: 80%;\n    border-radius: 5px;\n    padding: 1px 5px;\n    background: #eee; }\n\nnav {\n  background: #fff;\n  position: fixed;\n  top: 46px;\n  left: 0;\n  right: 0;\n  border-bottom: 1px solid #ddd; }\n  nav a {\n    display: inline-block;\n    width: 49.5%;\n    text-align: center;\n    line-height: 50px; }\n\nmain {\n  position: absolute;\n  bottom: 60px;\n  z-index: -1; }\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  width: 100%; }\n"],"sourceRoot":""}]);
+exports.push([module.i, "\nheader[data-v-ad54b74c] {\n  padding: 5px 5px;\n  line-height: 30px;\n  background: #40ffb1;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n}\nheader span[data-v-ad54b74c] {\n    display: inline-block;\n    width: 15%;\n    text-align: center;\n    color: #fff;\n}\nheader input[data-v-ad54b74c] {\n    width: 75%;\n    border-radius: 5px;\n    padding: 1px 5px;\n    background: #eee;\n}\nnav[data-v-ad54b74c] {\n  background: #fff;\n  position: fixed;\n  top: 46px;\n  left: 0;\n  right: 0;\n  border-bottom: 1px solid #ddd;\n}\nnav a[data-v-ad54b74c] {\n    display: inline-block;\n    width: 49.5%;\n    text-align: center;\n    line-height: 50px;\n}\nmain[data-v-ad54b74c] {\n  position: absolute;\n  bottom: 60px;\n  z-index: -1;\n}\nfooter[data-v-ad54b74c] {\n  position: fixed;\n  bottom: 0px;\n  width: 100%;\n}\n", "", {"version":3,"sources":["D:/project/v-douban/components/hots.vue"],"names":[],"mappings":";AAAA;EACE,iBAAiB;EACjB,kBAAkB;EAClB,oBAAoB;EACpB,gBAAgB;EAChB,SAAS;EACT,UAAU;EACV,WAAW;CAAE;AACb;IACE,sBAAsB;IACtB,WAAW;IACX,mBAAmB;IACnB,YAAY;CAAE;AAChB;IACE,WAAW;IACX,mBAAmB;IACnB,iBAAiB;IACjB,iBAAiB;CAAE;AAEvB;EACE,iBAAiB;EACjB,gBAAgB;EAChB,UAAU;EACV,QAAQ;EACR,SAAS;EACT,8BAA8B;CAAE;AAChC;IACE,sBAAsB;IACtB,aAAa;IACb,mBAAmB;IACnB,kBAAkB;CAAE;AAExB;EACE,mBAAmB;EACnB,aAAa;EACb,YAAY;CAAE;AAEhB;EACE,gBAAgB;EAChB,YAAY;EACZ,YAAY;CAAE","file":"hots.vue","sourcesContent":["header {\n  padding: 5px 5px;\n  line-height: 30px;\n  background: #40ffb1;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px; }\n  header span {\n    display: inline-block;\n    width: 15%;\n    text-align: center;\n    color: #fff; }\n  header input {\n    width: 75%;\n    border-radius: 5px;\n    padding: 1px 5px;\n    background: #eee; }\n\nnav {\n  background: #fff;\n  position: fixed;\n  top: 46px;\n  left: 0;\n  right: 0;\n  border-bottom: 1px solid #ddd; }\n  nav a {\n    display: inline-block;\n    width: 49.5%;\n    text-align: center;\n    line-height: 50px; }\n\nmain {\n  position: absolute;\n  bottom: 60px;\n  z-index: -1; }\n\nfooter {\n  position: fixed;\n  bottom: 0px;\n  width: 100%; }\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -25556,14 +25578,49 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "content"
-  }, [_c('header', [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+  }, [_c('header', [_c('div', {
+    staticClass: "face",
+    on: {
+      "click": function($event) {
+        _vm.bool = !_vm.bool
+      }
+    }
+  }, [_c('img', {
+    attrs: {
+      "src": "",
+      "alt": ""
+    }
+  })]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "logout",
     on: {
       "click": function($event) {
         _vm.logout()
       }
     }
-  }, [_vm._v("[退出]")])]), _vm._v(" "), _c('nav', [_c('mu-tabs', {
+  }, [_vm._v("[退出]")]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.bool),
+      expression: "bool"
+    }],
+    staticClass: "file"
+  }, [_c('input', {
+    attrs: {
+      "type": "file"
+    },
+    on: {
+      "change": function($event) {
+        _vm.commit()
+      }
+    }
+  }), _vm._v(" "), _c('button', {
+    on: {
+      "click": function($event) {
+        _vm.ok()
+      }
+    }
+  }, [_vm._v("确定")])])]), _vm._v(" "), _c('nav', [_c('mu-tabs', {
     attrs: {
       "value": _vm.activeTab
     },
@@ -25611,15 +25668,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1)], 1)], 1)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "face"
-  }, [_c('img', {
-    attrs: {
-      "src": "",
-      "alt": ""
-    }
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "login"
   }, [_c('a', {

@@ -1,0 +1,51 @@
+<style>
+	.user .head {
+		height: 180px;
+		padding: 20px;
+		background: #40ffb1;
+		position: relative;
+		
+	}
+	.user .face {
+		position: absolute;
+		top: 20%;
+		left: 10%;
+		
+	}
+	.user .face img {
+		display: block;
+		width: 80px;
+		height: 80px;
+		line-height: 100%;
+		border-radius: 50%;
+		background: #ccc;
+	}
+	.user .file {
+		position: absolute;
+		bottom: 0;
+		margin: 0 5%;
+	}
+	.user .login {
+		position: absolute;
+		top: 25%;
+		left: 40%;
+	}
+	.user .login a {
+		display: block;
+		color: #fff;
+		font-size: 1.5em;
+	}
+	.user .logout {
+		position: absolute;
+		top: 6%;
+		right: 6%;
+		padding: 5px;
+		color: #e340ff;
+		font-size: 1em;
+	}
+	footer {
+		position: fixed;
+		bottom: 0px;
+		width: 100%;
+	}
+</style>

@@ -1,0 +1,28 @@
+<div>
+	<header>
+		<span>广州</span>
+		<input type="text" placeholder="电影/电视剧/影人"/>
+	</header>
+	<nav>
+		<a href="#/hots/played">正在热映</a>
+		<a href="#/hots/prevue">即将上映</a>
+	</nav>
+	<main>
+		<ui-view></ui-view>
+	</main>
+	<!--footer-->
+	<div class="weui-tabbar">
+		<a ng-href="#/hots" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==0}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">热映</p>
+		</a>
+		<a ng-href="#/find" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==1}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">找片</p>
+		</a>
+		<a ng-href="#/user" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==2}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">我的</p>
+		</a>
+	</div>
+</div>

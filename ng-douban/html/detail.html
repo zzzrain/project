@@ -1,0 +1,174 @@
+<div class="detail">
+	<div class="poster"><img ng-src="{{film.images.large}}"/></div>
+	<div class="message">
+		<div class="info">
+			<h2 ng-bind="title"></h2>
+			<p>
+				<span ng-bind='film.year+" / "'></span>
+				<span ng-repeat='key in film.genres' ng-bind='key+" / "'></span>
+			</p>
+			<p><span>原名：</span><span ng-bind='film.original_title'></span></p>
+			<p><span>上映时间：</span><span ng-bind='film.mainland_pubdate'></span></p>
+			<p><span>片长：</span><span ng-bind='film.durations[0]'></span></p>
+		</div>
+		<div class="intro">
+			<p>简介</p>
+			<a ng-bind="film.summary" ng-href="film.alt" class="color flow"></a>
+			<span ng-click="show()" class="show">展开</span>
+		</div>
+		<div class="rating">
+			<span>豆瓣评分</span>
+			<h2 ng-bind='film.rating.average'></h2>
+			<span>多少人想看</span>
+			<p ng-bind='film.wish_count'></p>
+		</div>
+	</div>
+	<div class="center">
+		<a ng-href="'#/detail/'+film.id+'/comments'">短评</a>
+		<a ng-href="'#/detail/'+film.id+'/reviews'">影评</a>
+	</div>
+	<div class="issue">
+		<div class="write" ng-click="bool=!bool">写短评</div>
+		<textarea autofocus name="issue" rows="3" cols="36" ng-show='bool' ng-model='text'></textarea>
+		<div class="send" ng-click="send()" ng-show='bool'>发表</div>
+	</div>
+	<div class="local"></div>
+	<ui-view></ui-view>
+</div>
+
+<style>
+	
+	.load {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin: -30px 0 0 -30px;
+	}	
+	 
+	.detail h2,p{
+		margin: 0;
+	}
+	
+	.detail .poster {
+		display: block;
+		padding: 20px;
+		text-align: center;
+		img {
+			width: 150px;
+		}
+	}
+	
+	.detail .message {
+		padding: 20px;
+		position: relative;
+		
+	}
+	
+	.detail .message .info{
+		width: 60%;
+	}
+		
+	.detail .message .show{
+		position: absolute;
+		bottom: 18px;
+		right: 24px;
+		color: #40ff85;
+	}
+	
+	.detail .message .color{
+		color: #000;
+	}
+	
+	.detail .message .flow{
+		overflow: hidden;  
+		text-overflow: ellipsis;  
+		display: -webkit-box;  
+		-webkit-line-clamp: 3;  
+		-webkit-box-orient: vertical;
+		position: relative; 
+	}
+	
+	.detail .message .flow::after{
+	  content:'...';
+	  position: absolute;
+	  right: 0;
+	  bottom: 0;
+	  width: 38px;
+	  height: 21px;
+	  background-color: #fff;
+	}
+	
+	.detail .message .rating {
+		position: absolute;
+		top: 25px;
+		right: 35px;
+		width: 100px;
+		padding: 10px 0;
+		text-align: center;
+		background: #eee;
+	}
+	
+	.detail .center{
+		background: #eee;
+	}
+	
+	.detail .center a{
+		display: inline-block;
+		width: 49%;
+		text-align: center;
+		line-height: 50px;
+	}
+	
+	.detail .issue{
+		margin: 10px 0;
+		padding: 10px 20px;
+		border-bottom: 1px solid #40ff85;
+		
+	}
+	
+	.detail .write{
+		text-align: center;
+		line-height: 24px;
+		color: #40ff85;
+		width: 25%;
+		margin-left: 10%;
+	}
+	
+	textarea{
+		margin: 0 10%;
+	}
+	
+	.detail .send{
+		width: 16%;
+		margin-left: 76%;
+		text-align: center;
+		line-height: 25px;
+		background: #40ff85;
+		color: #fff;			
+	}
+	
+	.detail .local{
+		margin: 20px;
+	}
+	
+	.detail .local .info{
+		border-bottom: 1px solid #eee;
+		margin-bottom: 10px;
+	}
+	
+	.detail .local .user{
+		position: absolute;
+		
+	}
+	
+	.detail .local .user img{
+		border-radius: 50%;
+	}
+	
+	.detail .local .text{
+		position: absolute;
+		left: 20%;
+		width: 80%;
+		margin-left: 10px;
+	}
+</style>

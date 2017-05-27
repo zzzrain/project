@@ -1,0 +1,40 @@
+<style>
+	header{
+		height: 10%;
+		padding:5px 5px;
+		background: #ff0;
+		position: fixed;
+	}
+	header span{
+		display: inline-block;
+		width: 15%;
+		text-align: center;
+		color: #fff;
+	}
+	header input{
+		width: 75%;
+		height: 30px;
+		border-radius: 5px;
+		padding: 1px 5px;
+		background: #eee;
+	}
+	
+	nav{
+		background: #fff;
+		position: fixed;
+		top: 46px;
+		left: 0;
+		right: 0;
+		border-bottom: 1px solid #ddd;
+	}
+	nav a{
+		display: inline-block;
+		width: 49%;
+		text-align: center;
+		line-height: 50px;
+	}
+	main{
+		margin-top: 20%;
+		z-index: -1;
+	}
+</style>

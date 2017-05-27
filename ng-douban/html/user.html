@@ -1,0 +1,35 @@
+<div class="user">
+	<div class="head">
+		<div class="face" ng-click="bool=!bool"><img src="" alt="" /></div>
+		<div class="login"><a ng-href="#/login">请登录</a></div>
+		<div class="logout" ng-click="logout()">[退出]</div>
+	</header>
+	<div class="page">
+	    <div class="page__bd" style="height: 100%;">
+	        <div class="weui-tab">
+	            <div class="weui-navbar">
+	                <div class="weui-navbar__item weui-bar__item_on"> 选项一</div>
+	                <div class="weui-navbar__item"> 选项二</div>
+	            </div>
+	            <div class="weui-tab__panel">
+					
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!--footer-->
+	<div class="weui-tabbar">
+		<a ng-href="#/hots" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==0}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">热映</p>
+		</a>
+		<a ng-href="#/find" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==1}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">找片</p>
+		</a>
+		<a ng-href="#/user" class="weui-tabbar__item" ng-class="{'weui-bar__item_on':item==2}">
+			<img src="./img/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+			<p class="weui-tabbar__label">我的</p>
+		</a>
+	</div>
+</div>
