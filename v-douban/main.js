@@ -13,16 +13,15 @@ Vue.use(MuseUI)
 import $ from "jquery"
 window.$ = $
 
-// 加载封装
-//import sb from ""
-//window.sb = sb
+// 首页
+import index from "./components/index.vue"
 
-// 第一层
+// 三个主页
 import hots from "./components/hots.vue"
 import find from "./components/find.vue"
 import user from "./components/user.vue"
 
-// 第二层
+// 影片分页
 import played from "./components/played.vue"
 import prevue from "./components/prevue.vue"
 
@@ -38,21 +37,32 @@ import login from "./components/login.vue"
 import register from "./components/register.vue"
 import success from "./components/success.vue"
 
+
 var router = new VueRouter({
 	routes:[{
-		path:"/hots",
-		component:hots,
+		path:"/index",
+		component:index,
 		children:[{
-			// 热影片
-			path:"played",
-			component:played,
+			path:"hots",
+			component:hots,
+			children:[{
+				// 热影片
+				path:"played",
+				component:played,
+			},{
+				// 预影片
+				path:"prevue",
+				component:prevue
+			},{
+				path:"/",
+				redirect:"/index/hots/played"
+			}]
 		},{
-			// 预影片
-			path:"prevue",
-			component:prevue
+			path:"find",
+			component:find,
 		},{
-			path:"/",
-			redirect:"/hots/played"
+			path:"user",
+			component:user,
 		}]
 	},{
 		// 详细介绍
@@ -71,12 +81,6 @@ var router = new VueRouter({
 			redirect:"/detail/:id/comments"
 		}]
 	},{
-		path:"/find",
-		component:find,
-	},{
-		path:"/user",
-		component:user,
-	},{
 		// 登录
 		path:"/login",
 		component:login
@@ -90,7 +94,7 @@ var router = new VueRouter({
 		component:success
 	},{
 		path:"/",
-		redirect:"/hots"
+		redirect:"/index/hots/played"
 	}]
 })
 
@@ -99,5 +103,5 @@ new Vue({
 	data:{
 		test:"ok"
 	},
-	router,
+	router
 })

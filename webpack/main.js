@@ -7,10 +7,9 @@
 import $ from "jquery"
 window.$ = $
 
+// 引入Vue
 import Vue from "vue"
 import VueRouter from "vue-router"
-
-// 官方写法
 Vue.use(VueRouter)
 
 // 引入自定义组件	名字+路径

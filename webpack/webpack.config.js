@@ -4,14 +4,8 @@ module.exports = {
 	entry: __dirname + "/main.js",
 	//导出文件
 	output: {
-		path: __dirname + "/src",
+		path: __dirname + "/public",
 		filename: "bundle.js"
-	},
-	//vue2.0加上这句，然后暴露全局的vue函数
-	resolve: {
-		alias: {
-			vue: 'vue/dist/vue.js',
-		}
 	},
 	// 加载器
 	module: {
@@ -26,6 +20,12 @@ module.exports = {
 			test: /\.vue$/ ,
 			loader: "vue-loader"
 		}]
+	},
+	//vue2.0加上这句，然后暴露全局的vue函数
+	resolve: {
+		alias: {
+			vue: 'vue/dist/vue.js',
+		}
 	},
 	// 服务器
 	devServer:{

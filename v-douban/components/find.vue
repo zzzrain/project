@@ -1,15 +1,6 @@
 <template>
 	<div class="content">
 		<h2>up主很懒，什么都没有。。。</h2>
-		<footer>
-			<mu-paper>
-				<mu-bottom-nav :value="bottomNav" @change="handleChange">
-					<mu-bottom-nav-item value="hots" title="热映" href="/#/hots" icon="event seat" />
-					<mu-bottom-nav-item value="find" title="找片" href="/#/find" icon="visibility" />
-					<mu-bottom-nav-item value="user" title="我的" href="/#/user" icon="face" />
-				</mu-bottom-nav>
-			</mu-paper>
-		</footer>
 	</div>
 </template>
 
@@ -18,11 +9,6 @@
 		data() {
 			return {
 				bottomNav: 'find'
-			}
-		},
-		methods: {
-			handleChange(val) {
-				this.bottomNav = val
 			}
 		}
 	}
@@ -34,10 +20,5 @@
 	}
 	h2{
 		color: #40ff85;
-	}
-	footer {
-		position: fixed;
-		bottom: 0px;
-		width: 100%;
 	}
 </style>

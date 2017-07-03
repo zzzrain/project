@@ -2,7 +2,7 @@
 	<div class="content">
 		<header>
 			<div class="face" @click="bool=!bool"><img src="" alt="" /></div>
-			<div class="login"><a href="/#/login">请登录</a></div>
+			<div class="login"><a href="#/login">请登录</a></div>
 			<div class="logout" @click="logout()">[退出]</div>
 			<div v-show="bool"class="file">
 				<input type="file" @change="commit()"/>
@@ -27,15 +27,6 @@
 				</p>
 			</div>
 		</nav>
-		<footer>
-			<mu-paper>
-				<mu-bottom-nav :value="bottomNav" @change="handleChange">
-					<mu-bottom-nav-item value="hots" title="热映" href="/#/hots" icon="event seat" />
-					<mu-bottom-nav-item value="find" title="找片" href="/#/find" icon="visibility" />
-					<mu-bottom-nav-item value="user" title="我的" href="/#/user" icon="face" />
-				</mu-bottom-nav>
-			</mu-paper>
-		</footer>
 	</div>
 </template>
 
@@ -62,14 +53,10 @@
 			}.bind(this))
 		},
 		methods: {
-			handleChange(val) {
-				this.bottomNav = val
-			},
 			handleTabChange(val) {
 				this.activeTab = val
 			},
 			logout() {
-				$('.login a').text('请登录')
 				var now = new Date()
 				now.setDate(now.getDate() - 1)
 				document.cookie = 'username=xxx;expires=' + now + ';path=/'
@@ -134,11 +121,5 @@
 			color: #e340ff;
 			font-size: 1em;
 		}
-	}
-	
-	footer {
-		position: fixed;
-		bottom: 0px;
-		width: 100%;
 	}
 </style>
