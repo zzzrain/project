@@ -118,30 +118,6 @@ angular.module('demo', ['ui.router', 'router', 'controller', 'directive']);
 		})
 		.controller('detail', function($scope,$http) {
 			console.log('ok')
-			/*$scope.film: {
-				images:{
-					large:'',
-				},
-				alt:'',
-				title:'',
-				year:'',
-				genres:'',
-				original_title:'',
-				mainland_pubdate:'',
-				durations:'',
-				rating:{
-					average:''
-				},
-				wish_count:'',
-				summary:'',
-				id:'',
-			}
-			$scope.load: true,
-			$scope.flow:false,
-			$scope.bool:false,
-			$scope.text:'',
-			$scope.username:'',
-			$scope.now:'',*/
 			
 			// 网上数据
 			$scope.src = window.location.hash.substr(8).replace(/\/comments/,'')
